@@ -1,0 +1,452 @@
+fileFormatVersion: 2
+guid: 0d21777922c785548b87e2324b01926d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1649124494684812344
+    second: NicePng_slash-effect-png_1824697_0
+  - first:
+      213: -7355320307741273566
+    second: NicePng_slash-effect-png_1824697_1
+  - first:
+      213: -6985407132018324216
+    second: NicePng_slash-effect-png_1824697_2
+  - first:
+      213: -4301779481942383893
+    second: NicePng_slash-effect-png_1824697_3
+  - first:
+      213: -7884746036129632674
+    second: NicePng_slash-effect-png_1824697_4
+  - first:
+      213: 1413909548667623459
+    second: NicePng_slash-effect-png_1824697_5
+  - first:
+      213: 7281148606220254750
+    second: NicePng_slash-effect-png_1824697_6
+  - first:
+      213: -7696044947472662973
+    second: NicePng_slash-effect-png_1824697_7
+  - first:
+      213: 4337098911027781350
+    second: NicePng_slash-effect-png_1824697_8
+  - first:
+      213: -2032411624003064027
+    second: NicePng_slash-effect-png_1824697_9
+  - first:
+      213: 7241023487357975175
+    second: NicePng_slash-effect-png_1824697_10
+  - first:
+      213: 4601225105901740818
+    second: NicePng_slash-effect-png_1824697_11
+  - first:
+      213: -283345662053648134
+    second: NicePng_slash-effect-png_1824697_12
+  - first:
+      213: -7676258748767212568
+    second: NicePng_slash-effect-png_1824697_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 338.6667
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83475109dfdd2e610800000000000000
+      internalID: 1649124494684812344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 338.6667
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2225dd77627ace990800000000000000
+      internalID: -7355320307741273566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_2
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 338.6667
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d41944939de0f90800000000000000
+      internalID: -6985407132018324216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_3
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 338.6667
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2a2cc5a520d44c0800000000000000
+      internalID: -4301779481942383893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_4
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 338.6667
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ee25c5141c39290800000000000000
+      internalID: -7884746036129632674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 169.66667
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328ddd84e373f9310800000000000000
+      internalID: 1413909548667623459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_6
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 169.66667
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1eb6968416db0560800000000000000
+      internalID: 7281148606220254750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_7
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 169.66667
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34eb37a45e7223590800000000000000
+      internalID: -7696044947472662973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_8
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 169.66667
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee5b8b0b78703c30800000000000000
+      internalID: 4337098911027781350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_9
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 169.66667
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f2ce9656c6bc3e0800000000000000
+      internalID: -2032411624003064027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66667175
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a7b364f784d7460800000000000000
+      internalID: 7241023487357975175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_11
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 0.66667175
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213e1e00bd5dadf30800000000000000
+      internalID: 4601225105901740818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_12
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 0.66667175
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af8f4a02f9a511cf0800000000000000
+      internalID: -283345662053648134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NicePng_slash-effect-png_1824697_13
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 0.66667175
+        width: 172.6
+        height: 169.33333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebeebba653787590800000000000000
+      internalID: -7676258748767212568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 32b078f62766bb944beec60453d9b2f2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,692 @@
+fileFormatVersion: 2
+guid: 6ec5182b541776049a982517500cf323
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4094389995743800359
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_0
+  - first:
+      213: 4971482709234779088
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_1
+  - first:
+      213: 1493983594936787490
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_2
+  - first:
+      213: -1753484447180506690
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_3
+  - first:
+      213: 7743499761127566294
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_4
+  - first:
+      213: 7848341190477984276
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_5
+  - first:
+      213: 193130031413629951
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_6
+  - first:
+      213: -6419450604585566511
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_7
+  - first:
+      213: -7076612366498955438
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_8
+  - first:
+      213: -2494853025134683706
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_9
+  - first:
+      213: -8110328395700126146
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_10
+  - first:
+      213: 1304639697662849434
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_11
+  - first:
+      213: 6104693292051762402
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_12
+  - first:
+      213: -865319214141042612
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_13
+  - first:
+      213: -9205826500863384387
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_14
+  - first:
+      213: 395329013436924605
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_15
+  - first:
+      213: 1120456097551277097
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_16
+  - first:
+      213: -2259212618420305784
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_17
+  - first:
+      213: -8442097281954949293
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_18
+  - first:
+      213: 1968753995020253137
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_19
+  - first:
+      213: 1058785956699620437
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_20
+  - first:
+      213: -6719634824516011006
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_21
+  - first:
+      213: -1362040041156164200
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_22
+  - first:
+      213: -8516466233883036775
+    second: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ce834120232d830800000000000000
+      internalID: 4094389995743800359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d38fea1f214ef440800000000000000
+      internalID: 4971482709234779088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 222e7740a22bbb410800000000000000
+      internalID: 1493983594936787490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb932a68f2f5aa7e0800000000000000
+      internalID: -1753484447180506690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dba4548100767b60800000000000000
+      internalID: 7743499761127566294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412b18efab8eaec60800000000000000
+      internalID: 7848341190477984276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff39ed58db22ea200800000000000000
+      internalID: 193130031413629951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1deb284dfa789e6a0800000000000000
+      internalID: -6419450604585566511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_8
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f71b1db82dacd90800000000000000
+      internalID: -7076612366498955438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_9
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9d9065460806dd0800000000000000
+      internalID: -2494853025134683706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3eb7826b43527f80800000000000000
+      internalID: -8110328395700126146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91311b84e20b1210800000000000000
+      internalID: 1304639697662849434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec847f743a38b450800000000000000
+      internalID: 6104693292051762402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_13
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c409dc762c4cdf3f0800000000000000
+      internalID: -865319214141042612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4292072955e3080800000000000000
+      internalID: -9205826500863384387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db24057a4ad7c7500800000000000000
+      internalID: 395329013436924605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_16
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92cd6f062e8ac8f00800000000000000
+      internalID: 1120456097551277097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_17
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8804af6e71aa5a0e0800000000000000
+      internalID: -2259212618420305784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357d8cd0045a7da80800000000000000
+      internalID: -8442097281954949293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7305bd35b625b10800000000000000
+      internalID: 1968753995020253137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554c04ac73091be00800000000000000
+      internalID: 1058785956699620437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_21
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20cf060babf0fb2a0800000000000000
+      internalID: -6719634824516011006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_22
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89547098ccf091de0800000000000000
+      internalID: -1362040041156164200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: imgbin_rpg-maker-mv-rpg-maker-vx-rpg-maker-xp-animation-role-playing-video-game-png_23
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993facb151f6fc980800000000000000
+      internalID: -8516466233883036775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 005310aa6f46d2c4095ff215dfc8dd8c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
