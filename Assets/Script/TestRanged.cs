@@ -17,7 +17,7 @@ public class TestRanged : MonoBehaviour
             animator.enabled = true;
         transform.DOMove(transMoveTo.position, 1f*(2f/3f)).OnComplete(()=> 
         {
-            transform.DOMoveZ(0, 1f - 1f * 2f / 3f).OnComplete(() => { gameObject.SetActive(false); });
+            transform.DOMove(transform.position, 1f - 1f * 2f / 3f).OnComplete(() => { gameObject.SetActive(false); });
         });
         });
     }
