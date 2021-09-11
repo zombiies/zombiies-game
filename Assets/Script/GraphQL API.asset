@@ -13,16 +13,523 @@ MonoBehaviour:
   m_Name: GraphQL API
   m_EditorClassIdentifier: 
   url: https://zombiies-api.2soft.top/graphql
-  queries: []
-  mutations: []
-  subscriptions:
-  - name: test1
-    type: 2
-    query: "subscription test1{\n    hello\n}"
-    queryString: hello
-    returnType: String
+  queries:
+  - name: CanBuyStarterPack
+    type: 0
+    query: "query CanBuyStarterPack{\n    canBuyStarterPack\n}"
+    queryString: canBuyStarterPack
+    returnType: Boolean
     queryOptions:
-    - hello
+    - helloWorld
+    - me
+    - ownedWallet
+    - allCards
+    - ownedCardTokens
+    - canBuyStarterPack
+    - allAuctions
+    - ownedAuctions
+    - participatedAuctions
+    - ownedDecks
+    - isCardInDeck
     fields: []
     isComplete: 1
+  - name: OwnedCardTokens
+    type: 0
+    query: "query OwnedCardTokens{\n    ownedCardTokens{\n        cost\n        level\n       
+      skills{\n            type\n            value\n        }\n        name\n       
+      rareLevel\n        faction\n        type\n        tokenUri\n        tokenId\n   
+      }\n}"
+    queryString: ownedCardTokens
+    returnType: CardTokenModel
+    queryOptions:
+    - helloWorld
+    - me
+    - ownedWallet
+    - allCards
+    - ownedCardTokens
+    - canBuyToken
+    - allAuctions
+    - ownedAuctions
+    - participatedAuctions
+    - ownedDecks
+    - isCardInDeck
+    fields:
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 02000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 02000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  mutations:
+  - name: Register
+    type: 1
+    query: "mutation Register{\n    signup(  input :{ username :\"lamlam\", email
+      :\"lamlam@gmail.com\", password :\"nguyenlam1\"} ){\n        user{\n           
+      id\n            isVerified\n            email\n            username\n       
+      }\n        token{\n            accessToken\n        }\n    }\n}"
+    queryString: signup
+    returnType: AuthModel
+    queryOptions:
+    - signup
+    - login
+    fields:
+    - index: 0
+      name: user
+      type: UserModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: user
+        type: UserModel
+      - name: token
+        type: TokenModel
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: isVerified
+      type: Boolean
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 2
+      name: email
+      type: String
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: username
+      type: String
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: token
+      type: TokenModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: user
+        type: UserModel
+      - name: token
+        type: TokenModel
+      hasChanged: 0
+    - index: 0
+      name: accessToken
+      type: String
+      parentIndexes: 05000000
+      hasSubField: 0
+      possibleFields:
+      - name: accessToken
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: Login
+    type: 1
+    query: "mutation Login{\n    login(  input :{ email :\"admin@gmail.com\", password
+      :\"Password1!\"} ){\n        user{\n            isVerified\n            id\n           
+      email\n            username\n        }\n        token{\n            accessToken\n       
+      }\n    }\n}"
+    queryString: login
+    returnType: AuthModel
+    queryOptions:
+    - signup
+    - login
+    fields:
+    - index: 0
+      name: user
+      type: UserModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: user
+        type: UserModel
+      - name: token
+        type: TokenModel
+      hasChanged: 0
+    - index: 3
+      name: isVerified
+      type: Boolean
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 2
+      name: email
+      type: String
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: username
+      type: String
+      parentIndexes: 00000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: token
+      type: TokenModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: user
+        type: UserModel
+      - name: token
+        type: TokenModel
+      hasChanged: 0
+    - index: 0
+      name: accessToken
+      type: String
+      parentIndexes: 05000000
+      hasSubField: 0
+      possibleFields:
+      - name: accessToken
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: BuyStarterPack
+    type: 1
+    query: 
+    queryString: startAuction
+    returnType: 
+    queryOptions:
+    - signup
+    - login
+    - buyToken
+    - levelUpCard
+    - startAuction
+    - endAuction
+    - bid
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    fields: []
+    isComplete: 0
+  subscriptions: []
   loading: 0

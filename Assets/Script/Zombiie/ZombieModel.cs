@@ -1,12 +1,21 @@
 ﻿public class ZombieModel 
 {
+    public string ID;
     public string name;
     public int cost;
+    public int level;
     public TypeRarity rareLevel;
     public TypeFaction faction;
-    public LevelZombie[] levels;
+    public SkillZombie[] skills;
+    public string cid;
+    public string tokenUri;
+    public TypeCard type;
 
-
+}
+public enum TypeCard
+{
+    MONSTER,
+    EQUIPMENT
 }
 public class SkillZombie
 {
@@ -35,6 +44,7 @@ public enum TypeCoreSkill
     HEAL,
     GROUPHEAL,
     HP,
+    ARMOR
 }
 public enum TypeRarity
 {

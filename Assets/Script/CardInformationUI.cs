@@ -19,7 +19,15 @@ public class CardInformationUI : MonoBehaviour
     [SerializeField] Image imgBorder;
     [SerializeField] Image imgZombie = default;
     [SerializeField] Image imgRarity = default;
+    [SerializeField] Material materialFade = default;
 
+    private void Awake()
+    {
+        imgBorder.material = new Material(materialFade);
+        imgZombie.material = new Material(materialFade);
+        imgElite.material = new Material(materialFade);
+        imgRarity.material = new Material(materialFade);
+    }
     #region Public Method
     public void SetFactionBorderCard()
     {
@@ -112,6 +120,11 @@ public class CardInformationUI : MonoBehaviour
         SetSkill();
         SetNameCard();
     }
+
+    //public IEnumerator SetAnimationFade()
+    //{
+
+    //}    
     #endregion
 
     #region Private Method
