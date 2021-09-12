@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class DataManager : Singleton<DataManager>
 {
     public UserModel userInfo = new UserModel();
     public ZombieModel[] listCard;
+    public DeckModel[] listDeckUser;
     public Dictionary<string, List<ZombieModel>> listCardMosterUser = new Dictionary<string, List<ZombieModel>>(); 
     public Dictionary<string, List<ZombieModel>> listCardEquipmentUser = new Dictionary<string, List<ZombieModel>>(); 
     public void ClassifyCardUser()
     {
         ZombieModel[] arrCard = listCard;
+        listCardMosterUser = new Dictionary<string, List<ZombieModel>>();
+        listCardEquipmentUser = new Dictionary<string, List<ZombieModel>>();
         for (int i = 0; i < arrCard.Length; i++)
         {
-            Debug.LogError(arrCard[i].type);
             switch (arrCard[i].type)
             {
                 case TypeCard.MONSTER:
@@ -25,6 +28,35 @@ public class DataManager : Singleton<DataManager>
             }
         }
     }    
+    public void RemoveCard(ZombieModel zombie)
+    {
+        switch (zombie.type)
+        {
+            case TypeCard.MONSTER:
+                RemoveCardFromDictionary(listCardMosterUser, zombie);
+                break;
+            case TypeCard.EQUIPMENT:
+                RemoveCardFromDictionary(listCardEquipmentUser, zombie);
+                break;
+        }
+    }
+    public void AddCard(ZombieModel zombie)
+    {
+        switch (zombie.type)
+        {
+            case TypeCard.MONSTER:
+                AddCardToDictionary(listCardMosterUser, zombie);
+                break;
+            case TypeCard.EQUIPMENT:
+                AddCardToDictionary(listCardEquipmentUser, zombie);
+                break;
+        }
+    }
+    private void RemoveCardFromDictionary(Dictionary<string, List<ZombieModel>> listCard, ZombieModel zombie)
+    {
+        if (!listCard.ContainsKey(zombie.name)) return;
+        listCard[zombie.name].RemoveAll(x=>x.tokenId.Equals(zombie.tokenId));
+    }
     private void AddCardToDictionary(Dictionary<string, List<ZombieModel>> listCard, ZombieModel zombie)
     {
         if (listCard.ContainsKey(zombie.name))

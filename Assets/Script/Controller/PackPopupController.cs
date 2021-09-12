@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-public class PackPopupController : MonoBehaviour
+public class PackPopupController : Singleton<PackPopupController>
 {
     [SerializeField] ElementCard elementCard;
     [SerializeField] Transform elementParent;
@@ -11,6 +11,7 @@ public class PackPopupController : MonoBehaviour
     [SerializeField] Button btnBackPage;
     [SerializeField] Button btnMonster;
     [SerializeField] Button btnEquipment;
+    [SerializeField] Button btnExit;
     [SerializeField] Image imgMonster;
     [SerializeField] Image imgEquipment;
     [SerializeField] Sprite spiteOnSelectBtn;
@@ -34,13 +35,22 @@ public class PackPopupController : MonoBehaviour
             ShowPage();
         });
     }
-
+    private void OnEnable()
+    {
+        GraphQLManager.Instance.GetUserCards(() =>
+        {
+            OnButtonClicked();
+            SetUpSpriteWhenClicked(imgMonster, imgEquipment);
+            ShowPage();
+        });
+    }
     private void OnButtonClicked()
     {
         btnBackPage.onClick.AddListener(OnButtonBackPageClicked);
         btnNextPage.onClick.AddListener(OnButtonNextPageClicked);
         btnMonster.onClick.AddListener(OnButtonMonsterClicked);
         btnEquipment.onClick.AddListener(OnButtonEquipmentClicked);
+        btnExit.onClick.AddListener(OnExitButtonClicked);
     }
     private void OnButtonMonsterClicked()
     {
@@ -65,7 +75,7 @@ public class PackPopupController : MonoBehaviour
     private void OnButtonNextPageClicked()
     {
         _currentPage++;
-        if (_currentPage > _totalPage -1 )
+        if (_currentPage > _totalPage - 1)
             _currentPage = 0;
         ShowPage();
     }
@@ -76,7 +86,15 @@ public class PackPopupController : MonoBehaviour
             _currentPage = _totalPage;
         ShowPage();
     }
-    void ShowPage()
+    private void OnExitButtonClicked()
+    {
+        if (!HomeController.Instance.gameObject.activeSelf) return;
+        if (HomeController.Instance.packPopup.activeSelf)
+            HomeController.Instance.packPopup.SetActive(false);
+        if (HomeController.Instance.deckPopup.activeSelf)
+            HomeController.Instance.deckPopup.SetActive(false);
+    }
+    public void ShowPage()
     {
         DeleteElement();
         switch (_currentType)

@@ -7,7 +7,7 @@
     public TypeRarity rareLevel;
     public TypeFaction faction;
     public SkillZombie[] skills;
-    public string cid;
+    public string tokenId;
     public string tokenUri;
     public TypeCard type;
 

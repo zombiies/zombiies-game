@@ -250,7 +250,6 @@ GameObject:
   - component: {fileID: 2126624631495250512}
   - component: {fileID: 2126624631495250517}
   - component: {fileID: 2126624631495250514}
-  - component: {fileID: 2126624631495250516}
   m_Layer: 5
   m_Name: ElementCardInDeck
   m_TagString: Untagged
@@ -316,22 +315,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2126624631495250516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126624631495250513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c434ededef5b74385d517d3e22a89d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnElement: {fileID: 0}
-  cardInformation: {fileID: 5983646263974425245}
-  cardInformationUI: {fileID: 659450216874237658}
-  txt_Amount: {fileID: 2126624630597778296}
 --- !u!1 &2807185110515398706
 GameObject:
   m_ObjectHideFlags: 0
