@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HomeController : MonoBehaviour
+public class HomeController : Singleton<HomeController>
 {
 
     [SerializeField] Text txtNameUser = default;
     [SerializeField] Button btnShop = default;
     [SerializeField] Button btnPack = default;
     [SerializeField] Button btnArena = default;
+    public GameObject packPopup = default;
+    public GameObject deckPopup = default;
+    public GameObject SelectCardPopUp = default;
+    public GameObject UpgradePopup = default;
     void Start()
     {
         ShowInformation();
@@ -31,7 +35,10 @@ public class HomeController : MonoBehaviour
     }
     private void OnPackButtonClicked()
     {
-
+        if (!packPopup.activeSelf)
+            packPopup.SetActive(true);
+        if (!deckPopup.activeSelf)
+            deckPopup.SetActive(true);
     }
     private void OnArenaButtonClicked()
     {

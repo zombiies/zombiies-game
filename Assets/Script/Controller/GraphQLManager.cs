@@ -93,18 +93,99 @@ public class GraphQLManager : Singleton<GraphQLManager>
         graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
         UnityWebRequest request = await graphApi.Post(query);
         DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(request.downloadHandler.text);
-        DataManager.Instance.listCard = dataModel.data.ownedCardTokens;
-        DataManager.Instance.ClassifyCardUser();
-        if (_success != null) _success();
         LoadingPopUp.Instance.SetActive(false);
+        if (dataModel.data != null)
+        {
+            DataManager.Instance.listCard = dataModel.data.ownedCardTokens;
+            DataManager.Instance.ClassifyCardUser();
+            if (_success != null) _success();
+        }
     }
     public async void CanBuyStarterPack()
     {
         GraphApi.Query query = graphApi.GetQueryByName("CanBuyStarterPack", GraphApi.Query.Type.Query);
         graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
-        UnityWebRequest request =  await graphApi.Post(query);
+        UnityWebRequest request = await graphApi.Post(query);
         Debug.LogError(request.downloadHandler.text);
-        
+    }
+    public async void GetOwnedDecks(Action _success = null)
+    {
+        GraphApi.Query query = graphApi.GetQueryByName("OwnedDecks", GraphApi.Query.Type.Query);
+        graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
+        UnityWebRequest request = await graphApi.Post(query);
+        DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(request.downloadHandler.text);
+        DataManager.Instance.listDeckUser = dataModel.data.ownedDecks;
+        if (DataManager.Instance.listDeckUser.Length == 0)
+        {
+            CreateDeck();
+        }
+        if (_success != null) _success();
+    }
+    public async void CreateDeck()
+    {
+        GraphApi.Query query = graphApi.GetQueryByName("OwnedDecks", GraphApi.Query.Type.Mutation);
+        graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
+        query.SetArgs(new { input = new DeckInput("Deck 1") });
+        UnityWebRequest request = await graphApi.Post(query);
+        DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(request.downloadHandler.text);
+        DataManager.Instance.listDeckUser = dataModel.data.ownedDecks;
+    }
+    public async void AddCardToDeck(string tokenId, string deckId, Action _success = null)
+    {
+        LoadingPopUp.Instance.SetActive(true);
+        GraphApi.Query query = graphApi.GetQueryByName("AddCardToDeck", GraphApi.Query.Type.Mutation);
+        graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
+        query.SetArgs(new { input = new TokenInDeckInput(tokenId, deckId) });
+        UnityWebRequest request = await graphApi.Post(query);
+        DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(request.downloadHandler.text);
+        LoadingPopUp.Instance.SetActive(false);
+        if (dataModel.data != null)
+        {
+            DataManager.Instance.listDeckUser = new DeckModel[] { dataModel.data.addCardToDeck };
+            if (_success != null) _success();
+        }
+    }
+    public async void RemoveCardFromDeck(string tokenId, string deckId, Action _success = null)
+    {
+        LoadingPopUp.Instance.SetActive(true);
+        GraphApi.Query query = graphApi.GetQueryByName("RemoveCardFromDeck", GraphApi.Query.Type.Mutation);
+        graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
+        query.SetArgs(new { input = new TokenInDeckInput(tokenId, deckId) });
+        UnityWebRequest request = await graphApi.Post(query);
+        DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(request.downloadHandler.text);
+        LoadingPopUp.Instance.SetActive(false);
+        if (dataModel.data != null)
+        {
+            DataManager.Instance.listDeckUser = new DeckModel[] { dataModel.data.removeCardFromDeck };
+            if (_success != null) _success();
+        }
+    }
+    public async void UpgradeCard(ZombieModel zombie1, ZombieModel zombie2, Action _success = null)
+    {
+        LoadingPopUp.Instance.SetActive(true);
+        GraphApi.Query query = graphApi.GetQueryByName("UpgradeCard", GraphApi.Query.Type.Mutation);
+        graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
+        query.SetArgs(new { input = new LevelUpCardInput(zombie1.tokenId, zombie2.tokenId) });
+        UnityWebRequest request = await graphApi.Post(query);
+        DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(request.downloadHandler.text);
+        LoadingPopUp.Instance.SetActive(false);
+        if (dataModel.data != null)
+        {
+            DataManager.Instance.AddCard(dataModel.data.levelUpCard);
+            DataManager.Instance.RemoveCard(zombie1);
+            DataManager.Instance.RemoveCard(zombie2);
+            if (UpgradePopupController.Instance)
+            {
+                ZombieModel _zombie = dataModel.data.levelUpCard;
+                List<ZombieModel> _listCard = _zombie.type == TypeCard.MONSTER ? DataManager.Instance.listCardMosterUser[_zombie.name] : DataManager.Instance.listCardEquipmentUser[_zombie.name];
+                UpgradePopupController.Instance.Init(_zombie, _listCard);
+                if (SelecCardPopupController.Instance)
+                    SelecCardPopupController.Instance.Init(_listCard);
+            }
+            if (PackPopupController.Instance)
+                PackPopupController.Instance.ShowPage();
+            if (_success != null) _success();
+        }
     }
     private void ShowError(DataModel _dataModel, Text _textError)
     {

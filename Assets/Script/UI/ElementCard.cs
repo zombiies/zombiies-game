@@ -9,7 +9,6 @@ public class ElementCard : MonoBehaviour
     public CardInformation cardInformation = default;
     public CardInformationUI cardInformationUI = default;
     public Text txt_Amount = default;
-
     void Start()
     {
         btnElement.onClick.AddListener(OnButtonClicked);
@@ -17,5 +16,32 @@ public class ElementCard : MonoBehaviour
 
     void OnButtonClicked()
     {
+        switch(cardInformation.type)
+        {
+            case TypeCard.MONSTER:
+                if (DataManager.Instance.listCardMosterUser.ContainsKey(cardInformation.nameCard))
+                {
+                    if (HomeController.Instance)
+                    {
+                        if (HomeController.Instance.SelectCardPopUp.activeSelf)
+                            HomeController.Instance.SelectCardPopUp.SetActive(false);
+                        HomeController.Instance.SelectCardPopUp.SetActive(true);
+                        SelecCardPopupController.Instance.Init(DataManager.Instance.listCardMosterUser[cardInformation.nameCard]);
+                    }
+                }
+                break;
+            case TypeCard.EQUIPMENT:
+                if (DataManager.Instance.listCardEquipmentUser.ContainsKey(cardInformation.nameCard))
+                {
+                    if (SelecCardPopupController.Instance)
+                    {
+                        if (SelecCardPopupController.Instance.gameObject.activeSelf)
+                            SelecCardPopupController.Instance.gameObject.SetActive(false);
+                        SelecCardPopupController.Instance.gameObject.SetActive(true);
+                        SelecCardPopupController.Instance.Init(DataManager.Instance.listCardEquipmentUser[cardInformation.nameCard]);
+                    }
+                }
+                break;
+        }
     }
 }
