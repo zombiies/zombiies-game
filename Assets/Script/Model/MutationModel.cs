@@ -11,4 +11,8 @@ public class MutationModel
     public DeckModel addCardToDeck;
     public DeckModel removeCardFromDeck;
     public ZombieModel levelUpCard;
+    public string getPackFee;
+    public AuctionModel[] allAuctions;
+    public AuctionModel bid;
+    public UserWalletModel ownedWallet;
 }

@@ -10,6 +10,7 @@ public class SelecCardPopupController : Singleton<SelecCardPopupController>
     [SerializeField] Button btnExit = default;
     [SerializeField] Button btnUse = default;
     [SerializeField] Button btnUpgrade = default;
+    [SerializeField] Button btnAuction = default;
     [SerializeField] CardInformation cardInformation = default;
     [SerializeField] CardInformationUI cardInformationUI = default;
     [SerializeField] Text txtPage = default;
@@ -28,6 +29,7 @@ public class SelecCardPopupController : Singleton<SelecCardPopupController>
     }
     public void Init(List<ZombieModel> _listCard)
     {
+        _currentCard = 0;
         this.listCard = _listCard;
         ShowCard();
     }
@@ -38,6 +40,7 @@ public class SelecCardPopupController : Singleton<SelecCardPopupController>
         btnBackPage.onClick.AddListener(OnBackPageButtonClicked);
         btnUse.onClick.AddListener(OnUsePageButtonClicked);
         btnUpgrade.onClick.AddListener(OnUpgradePageButtonClicked);
+        btnAuction.onClick.AddListener(OnAuctionButtonClicked);
     }
     private void OnNextPageButtonClicked()
     {
@@ -93,6 +96,16 @@ public class SelecCardPopupController : Singleton<SelecCardPopupController>
                 HomeController.Instance.UpgradePopup.SetActive(false);
             HomeController.Instance.UpgradePopup.SetActive(true);
             UpgradePopupController.Instance.Init(listCard[_currentCard], listCard);
+        }
+    }
+    private void OnAuctionButtonClicked()
+    {
+        if (HomeController.Instance)
+        {
+            if (HomeController.Instance.AuctionPopup.activeSelf)
+                HomeController.Instance.AuctionPopup.SetActive(false);
+            HomeController.Instance.AuctionPopup.SetActive(true);
+            AuctionPopupController.Instance.Init(listCard[_currentCard]);
         }
     }
 

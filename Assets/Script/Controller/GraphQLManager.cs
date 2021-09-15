@@ -187,6 +187,85 @@ public class GraphQLManager : Singleton<GraphQLManager>
             if (_success != null) _success();
         }
     }
+    public async void AuctionCard(ZombieModel zombie1, string startBid, Action _success = null)
+    {
+        LoadingPopUp.Instance.SetActive(true);
+        GraphApi.Query query = graphApi.GetQueryByName("StartAuction", GraphApi.Query.Type.Mutation);
+        graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
+        query.SetArgs(new { input = new StartAuctionInput(zombie1.tokenId, startBid) });
+        UnityWebRequest request = await graphApi.Post(query);
+        DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(request.downloadHandler.text);
+        LoadingPopUp.Instance.SetActive(false);
+        if (dataModel.data != null)
+        {
+            DataManager.Instance.RemoveCard(zombie1);
+            List<ZombieModel> _listCard = new List<ZombieModel>();
+            switch (zombie1.type)
+            {
+                case TypeCard.MONSTER:
+                    if (DataManager.Instance.listCardMosterUser.ContainsKey(zombie1.name))
+                        _listCard = DataManager.Instance.listCardMosterUser[zombie1.name];
+                    break;
+                case TypeCard.EQUIPMENT:
+                    if (DataManager.Instance.listCardEquipmentUser.ContainsKey(zombie1.name))
+                        _listCard = DataManager.Instance.listCardEquipmentUser[zombie1.name];
+                    break;
+            }
+            if (_listCard.Count > 0)
+            {
+                if (SelecCardPopupController.Instance)
+                    SelecCardPopupController.Instance.Init(_listCard);
+            }
+            else
+                if (SelecCardPopupController.Instance)
+                SelecCardPopupController.Instance.gameObject.SetActive(false);
+            if (PackPopupController.Instance)
+                PackPopupController.Instance.ShowPage();
+            if (_success != null) _success();
+        }
+    }
+    public async void getAllAuctopn(Action _success = null)
+    {
+        LoadingPopUp.Instance.SetActive(true);
+        GraphApi.Query query = graphApi.GetQueryByName("AllAuctions", GraphApi.Query.Type.Query);
+        graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
+        UnityWebRequest request = await graphApi.Post(query);
+        DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(request.downloadHandler.text);
+        LoadingPopUp.Instance.SetActive(false);
+        if (dataModel.data != null)
+        {
+            DataManager.Instance.listAllAuction = dataModel.data.allAuctions;
+            if (_success != null) _success();
+        }
+    }
+    public async void BidToken(string _auctionId, string _bid, Action _success = null)
+    {
+        LoadingPopUp.Instance.SetActive(true);
+        GraphApi.Query query = graphApi.GetQueryByName("Bid", GraphApi.Query.Type.Mutation);
+        query.SetArgs(new { input = new BidInput(_auctionId, _bid) });
+        graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
+        UnityWebRequest request = await graphApi.Post(query);
+        DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(request.downloadHandler.text);
+        LoadingPopUp.Instance.SetActive(false);
+        if (dataModel.data != null)
+        {
+            if (_success != null) _success();
+        }
+    }
+    public async void GetWalletUser(Action _success = null)
+    {
+        LoadingPopUp.Instance.SetActive(true);
+        GraphApi.Query query = graphApi.GetQueryByName("GetWallet", GraphApi.Query.Type.Query);
+        graphApi.SetAuthToken(DataManager.Instance.userInfo.token);
+        UnityWebRequest request = await graphApi.Post(query);
+        DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(request.downloadHandler.text);
+        LoadingPopUp.Instance.SetActive(false);
+        if (dataModel.data != null)
+        {
+            DataManager.Instance.balanceEthUser = double.Parse(dataModel.data.ownedWallet.balance); 
+            if (_success != null) _success();
+        }
+    }
     private void ShowError(DataModel _dataModel, Text _textError)
     {
         _textError.gameObject.SetActive(true);
