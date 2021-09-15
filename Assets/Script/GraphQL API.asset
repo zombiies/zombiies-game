@@ -656,6 +656,671 @@ MonoBehaviour:
         type: String
       hasChanged: 0
     isComplete: 1
+  - name: GetPackFee
+    type: 0
+    query: 
+    queryString: getPackFee
+    returnType: String
+    queryOptions:
+    - helloWorld
+    - me
+    - ownedWallet
+    - allCards
+    - getPackFee
+    - ownedCardTokens
+    - canBuyToken
+    - allAuctions
+    - ownedAuctions
+    - participatedAuctions
+    - ownedDecks
+    - isCardInDeck
+    fields: []
+    isComplete: 0
+  - name: GetWallet
+    type: 0
+    query: "query GetWallet{\n    ownedWallet{\n        address\n        balance\n   
+      }\n}"
+    queryString: ownedWallet
+    returnType: UserWalletModel
+    queryOptions:
+    - helloWorld
+    - me
+    - ownedWallet
+    - allCards
+    - getPackFee
+    - ownedCardTokens
+    - canBuyToken
+    - allAuctions
+    - ownedAuctions
+    - participatedAuctions
+    - ownedDecks
+    - isCardInDeck
+    - ownedNotifications
+    fields:
+    - index: 0
+      name: address
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: balance
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: AllAuctions
+    type: 0
+    query: "query AllAuctions{\n    allAuctions{\n        id\n        token{\n           
+      cost\n            level\n            skills{\n                type\n               
+      value\n        }\n            name\n            rareLevel\n            faction\n           
+      type\n            tokenUri\n            tokenId\n        }\n        endAt\n       
+      startBid\n        latestBidder{\n            id\n            username\n       
+      }\n        latestBid\n        seller{\n            id\n            username\n       
+      }\n    }\n}"
+    queryString: allAuctions
+    returnType: AuctionModel
+    queryOptions:
+    - helloWorld
+    - me
+    - ownedWallet
+    - allCards
+    - getPackFee
+    - ownedCardTokens
+    - canBuyToken
+    - allAuctions
+    - ownedAuctions
+    - participatedAuctions
+    - ownedDecks
+    - isCardInDeck
+    - ownedNotifications
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: token
+        type: CardTokenModel
+      - name: seller
+        type: UserModel
+      - name: latestBidder
+        type: UserModel
+      - name: bidHistory
+        type: BidActionModel
+      - name: sellerAddress
+        type: String
+      - name: startBid
+        type: String
+      - name: startAt
+        type: DateTime
+      - name: endAt
+        type: DateTime
+      - name: startTransactionHash
+        type: String
+      - name: latestBid
+        type: String
+      - name: latestBidderAddress
+        type: String
+      - name: latestBidAt
+        type: DateTime
+      - name: latestTransactionHash
+        type: String
+      - name: isEnded
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: token
+      type: CardTokenModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: token
+        type: CardTokenModel
+      - name: seller
+        type: UserModel
+      - name: latestBidder
+        type: UserModel
+      - name: bidHistory
+        type: BidActionModel
+      - name: sellerAddress
+        type: String
+      - name: startBid
+        type: String
+      - name: startAt
+        type: DateTime
+      - name: endAt
+        type: DateTime
+      - name: startTransactionHash
+        type: String
+      - name: latestBid
+        type: String
+      - name: latestBidderAddress
+        type: String
+      - name: latestBidAt
+        type: DateTime
+      - name: latestTransactionHash
+        type: String
+      - name: isEnded
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 01000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 0100000004000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 0100000004000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 8
+      name: endAt
+      type: DateTime
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: token
+        type: CardTokenModel
+      - name: seller
+        type: UserModel
+      - name: latestBidder
+        type: UserModel
+      - name: bidHistory
+        type: BidActionModel
+      - name: sellerAddress
+        type: String
+      - name: startBid
+        type: String
+      - name: startAt
+        type: DateTime
+      - name: endAt
+        type: DateTime
+      - name: startTransactionHash
+        type: String
+      - name: latestBid
+        type: String
+      - name: latestBidderAddress
+        type: String
+      - name: latestBidAt
+        type: DateTime
+      - name: latestTransactionHash
+        type: String
+      - name: isEnded
+        type: Boolean
+      hasChanged: 0
+    - index: 6
+      name: startBid
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: token
+        type: CardTokenModel
+      - name: seller
+        type: UserModel
+      - name: latestBidder
+        type: UserModel
+      - name: bidHistory
+        type: BidActionModel
+      - name: sellerAddress
+        type: String
+      - name: startBid
+        type: String
+      - name: startAt
+        type: DateTime
+      - name: endAt
+        type: DateTime
+      - name: startTransactionHash
+        type: String
+      - name: latestBid
+        type: String
+      - name: latestBidderAddress
+        type: String
+      - name: latestBidAt
+        type: DateTime
+      - name: latestTransactionHash
+        type: String
+      - name: isEnded
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: latestBidder
+      type: UserModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: token
+        type: CardTokenModel
+      - name: seller
+        type: UserModel
+      - name: latestBidder
+        type: UserModel
+      - name: bidHistory
+        type: BidActionModel
+      - name: sellerAddress
+        type: String
+      - name: startBid
+        type: String
+      - name: startAt
+        type: DateTime
+      - name: endAt
+        type: DateTime
+      - name: startTransactionHash
+        type: String
+      - name: latestBid
+        type: String
+      - name: latestBidderAddress
+        type: String
+      - name: latestBidAt
+        type: DateTime
+      - name: latestTransactionHash
+        type: String
+      - name: isEnded
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 0f000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 2
+      name: username
+      type: String
+      parentIndexes: 0f000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 10
+      name: latestBid
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: token
+        type: CardTokenModel
+      - name: seller
+        type: UserModel
+      - name: latestBidder
+        type: UserModel
+      - name: bidHistory
+        type: BidActionModel
+      - name: sellerAddress
+        type: String
+      - name: startBid
+        type: String
+      - name: startAt
+        type: DateTime
+      - name: endAt
+        type: DateTime
+      - name: startTransactionHash
+        type: String
+      - name: latestBid
+        type: String
+      - name: latestBidderAddress
+        type: String
+      - name: latestBidAt
+        type: DateTime
+      - name: latestTransactionHash
+        type: String
+      - name: isEnded
+        type: Boolean
+      hasChanged: 0
+    - index: 2
+      name: seller
+      type: UserModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: token
+        type: CardTokenModel
+      - name: seller
+        type: UserModel
+      - name: latestBidder
+        type: UserModel
+      - name: bidHistory
+        type: BidActionModel
+      - name: sellerAddress
+        type: String
+      - name: startBid
+        type: String
+      - name: startAt
+        type: DateTime
+      - name: endAt
+        type: DateTime
+      - name: startTransactionHash
+        type: String
+      - name: latestBid
+        type: String
+      - name: latestBidderAddress
+        type: String
+      - name: latestBidAt
+        type: DateTime
+      - name: latestTransactionHash
+        type: String
+      - name: isEnded
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 13000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 2
+      name: username
+      type: String
+      parentIndexes: 13000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    isComplete: 1
   mutations:
   - name: Register
     type: 1
@@ -1222,7 +1887,7 @@ MonoBehaviour:
     isComplete: 1
   - name: AddCardToDeck
     type: 1
-    query: "mutation AddCardToDeck{\n    addCardToDeck(  input :{ tokenId :\"0x01\",
+    query: "mutation AddCardToDeck{\n    addCardToDeck(  input :{ tokenId :\"0x20\",
       deckId :\"613ca6399810614a55d4b3ab\"} ){\n        id\n        cards{\n           
       cost\n            level\n            skills{\n                type\n               
       value\n        }\n            name\n            rareLevel\n            faction\n           
@@ -1579,7 +2244,7 @@ MonoBehaviour:
   - name: RemoveCardFromDeck
     type: 1
     query: "mutation RemoveCardFromDeck{\n    removeCardFromDeck(  input :{ tokenId
-      :\"0x0e\", deckId :\"613ca6399810614a55d4b3ab\"} ){\n        id\n        cards{\n           
+      :\"0x20\", deckId :\"613ca6399810614a55d4b3ab\"} ){\n        id\n        cards{\n           
       cost\n            level\n            skills{\n                type\n               
       value\n        }\n            name\n            rareLevel\n            faction\n           
       type\n            tokenUri\n            tokenId\n            position\n       
@@ -1934,7 +2599,7 @@ MonoBehaviour:
     isComplete: 1
   - name: UpgradeCard
     type: 1
-    query: "mutation UpgradeCard{\n    levelUpCard(  input :{ sacrificeTokenIds :[\"0x0d\",\"0x0e\"]}
+    query: "mutation UpgradeCard{\n    levelUpCard(  input :{ sacrificeTokenIds :[\"0x21\",\"0x1a\"]}
       ){\n        cost\n        level\n        skills{\n            type\n           
       value\n        }\n        name\n        rareLevel\n        faction\n       
       type\n        tokenUri\n        tokenId\n    }\n}"
@@ -2200,6 +2865,120 @@ MonoBehaviour:
         type: String
       - name: tokenId
         type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: StartAuction
+    type: 1
+    query: "mutation StartAuction{\n    startAuction(  input :{ tokenId :\"0x1b\",
+      startBid :\"0.0013\"} ){\n        id\n    }\n}"
+    queryString: startAuction
+    returnType: AuctionModel
+    queryOptions:
+    - signup
+    - login
+    - buyToken
+    - levelUpCard
+    - startAuction
+    - endAuction
+    - bid
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: seller
+        type: UserModel
+      - name: latestBidder
+        type: UserModel
+      - name: bidHistory
+        type: BidActionModel
+      - name: sellerAddress
+        type: String
+      - name: startBid
+        type: String
+      - name: startAt
+        type: DateTime
+      - name: endAt
+        type: DateTime
+      - name: startTransactionHash
+        type: String
+      - name: latestBid
+        type: String
+      - name: latestBidderAddress
+        type: String
+      - name: latestBidAt
+        type: DateTime
+      - name: latestTransactionHash
+        type: String
+      - name: isEnded
+        type: Boolean
+      hasChanged: 0
+    isComplete: 1
+  - name: Bid
+    type: 1
+    query: "mutation Bid{\n    bid{\n        id\n    }\n}"
+    queryString: bid
+    returnType: AuctionModel
+    queryOptions:
+    - signup
+    - login
+    - buyToken
+    - levelUpCard
+    - startAuction
+    - bid
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    - pushNotification
+    - markAllNotificationsAsRead
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: token
+        type: CardTokenModel
+      - name: seller
+        type: UserModel
+      - name: latestBidder
+        type: UserModel
+      - name: bidHistory
+        type: BidActionModel
+      - name: sellerAddress
+        type: String
+      - name: startBid
+        type: String
+      - name: startAt
+        type: DateTime
+      - name: endAt
+        type: DateTime
+      - name: startTransactionHash
+        type: String
+      - name: latestBid
+        type: String
+      - name: latestBidderAddress
+        type: String
+      - name: latestBidAt
+        type: DateTime
+      - name: latestTransactionHash
+        type: String
+      - name: isEnded
+        type: Boolean
       hasChanged: 0
     isComplete: 1
   subscriptions: []

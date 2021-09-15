@@ -8,8 +8,10 @@ public class DataManager : Singleton<DataManager>
     public UserModel userInfo = new UserModel();
     public ZombieModel[] listCard;
     public DeckModel[] listDeckUser;
+    public double balanceEthUser;
     public Dictionary<string, List<ZombieModel>> listCardMosterUser = new Dictionary<string, List<ZombieModel>>(); 
-    public Dictionary<string, List<ZombieModel>> listCardEquipmentUser = new Dictionary<string, List<ZombieModel>>(); 
+    public Dictionary<string, List<ZombieModel>> listCardEquipmentUser = new Dictionary<string, List<ZombieModel>>();
+    public AuctionModel[] listAllAuction;
     public void ClassifyCardUser()
     {
         ZombieModel[] arrCard = listCard;
@@ -56,6 +58,8 @@ public class DataManager : Singleton<DataManager>
     {
         if (!listCard.ContainsKey(zombie.name)) return;
         listCard[zombie.name].RemoveAll(x=>x.tokenId.Equals(zombie.tokenId));
+        if (listCard[zombie.name]!= null && listCard[zombie.name].Count == 0)
+            listCard.Remove(zombie.name);
     }
     private void AddCardToDictionary(Dictionary<string, List<ZombieModel>> listCard, ZombieModel zombie)
     {
@@ -106,6 +110,11 @@ public class DataManager : Singleton<DataManager>
     }
 
 
+}
+public class UserWalletModel
+{
+    public string address;
+    public string balance;
 }
 public struct DATA_USER
 {

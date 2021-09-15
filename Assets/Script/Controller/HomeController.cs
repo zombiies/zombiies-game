@@ -10,14 +10,26 @@ public class HomeController : Singleton<HomeController>
     [SerializeField] Button btnShop = default;
     [SerializeField] Button btnPack = default;
     [SerializeField] Button btnArena = default;
+    [SerializeField] Text txtEth = default;
     public GameObject packPopup = default;
     public GameObject deckPopup = default;
     public GameObject SelectCardPopUp = default;
     public GameObject UpgradePopup = default;
+    public GameObject AuctionPopup = default;
+    public GameObject ShopPopUp = default;
+    public GameObject BIDPopUp = default;
     void Start()
     {
         ShowInformation();
         OnButtonClicked();
+        UpdateETH();
+    }
+    public void UpdateETH()
+    {
+        GraphQLManager.Instance.GetWalletUser(()=> 
+        {
+            txtEth.text = DataManager.Instance.balanceEthUser.ToString();
+        });
     }
     private void ShowInformation()
     {
@@ -31,7 +43,10 @@ public class HomeController : Singleton<HomeController>
     }
     private void OnShopButtonClicked()
     {
-
+        GraphQLManager.Instance.getAllAuctopn(() => 
+        {
+            ShopPopUp.SetActive(true);
+        });
     }
     private void OnPackButtonClicked()
     {

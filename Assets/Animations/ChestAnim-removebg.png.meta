@@ -1,0 +1,2048 @@
+fileFormatVersion: 2
+guid: 17918f710af636948b57f9b212e9dd4f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1798036485753832923
+    second: ChestAnim-removebg_0
+  - first:
+      213: -7002853408701491943
+    second: ChestAnim-removebg_1
+  - first:
+      213: 6792738758536463889
+    second: ChestAnim-removebg_2
+  - first:
+      213: 8457056977808702536
+    second: ChestAnim-removebg_3
+  - first:
+      213: 3506776556776915837
+    second: ChestAnim-removebg_4
+  - first:
+      213: -1525310569967463040
+    second: ChestAnim-removebg_5
+  - first:
+      213: -7922673361831284928
+    second: ChestAnim-removebg_6
+  - first:
+      213: -690310215072019248
+    second: ChestAnim-removebg_7
+  - first:
+      213: 6906678541783028633
+    second: ChestAnim-removebg_8
+  - first:
+      213: -4819384045409745061
+    second: ChestAnim-removebg_9
+  - first:
+      213: -1040029924173754319
+    second: ChestAnim-removebg_10
+  - first:
+      213: -5569255459810894542
+    second: ChestAnim-removebg_11
+  - first:
+      213: 1653141763944070544
+    second: ChestAnim-removebg_12
+  - first:
+      213: -8160315317616003077
+    second: ChestAnim-removebg_13
+  - first:
+      213: -1942838985189643591
+    second: ChestAnim-removebg_14
+  - first:
+      213: 4227150842867957814
+    second: ChestAnim-removebg_15
+  - first:
+      213: 3384992105721541144
+    second: ChestAnim-removebg_16
+  - first:
+      213: 6730499811209183951
+    second: ChestAnim-removebg_17
+  - first:
+      213: -6536353065118755601
+    second: ChestAnim-removebg_18
+  - first:
+      213: 1034132212565110531
+    second: ChestAnim-removebg_19
+  - first:
+      213: -3883785717348903998
+    second: ChestAnim-removebg_20
+  - first:
+      213: 6373782783944557883
+    second: ChestAnim-removebg_21
+  - first:
+      213: 5080796936446898955
+    second: ChestAnim-removebg_22
+  - first:
+      213: 2283186482981840523
+    second: ChestAnim-removebg_23
+  - first:
+      213: -2798875326932520469
+    second: ChestAnim-removebg_24
+  - first:
+      213: 5470728142654595010
+    second: ChestAnim-removebg_25
+  - first:
+      213: 222938078806657768
+    second: ChestAnim-removebg_26
+  - first:
+      213: -7004404563399237058
+    second: ChestAnim-removebg_27
+  - first:
+      213: 3764000827411271146
+    second: ChestAnim-removebg_28
+  - first:
+      213: 4318711706689081830
+    second: ChestAnim-removebg_29
+  - first:
+      213: -514191729214120679
+    second: ChestAnim-removebg_30
+  - first:
+      213: -6732278302294649936
+    second: ChestAnim-removebg_31
+  - first:
+      213: -6279898778536979206
+    second: ChestAnim-removebg_32
+  - first:
+      213: 5154288137098356457
+    second: ChestAnim-removebg_33
+  - first:
+      213: 5796094801194801247
+    second: ChestAnim-removebg_34
+  - first:
+      213: 6791127774821016584
+    second: ChestAnim-removebg_35
+  - first:
+      213: 1380048354656916739
+    second: ChestAnim-removebg_36
+  - first:
+      213: -283896527197501997
+    second: ChestAnim-removebg_37
+  - first:
+      213: 4472511520101964246
+    second: ChestAnim-removebg_38
+  - first:
+      213: -2590148898708271267
+    second: ChestAnim-removebg_39
+  - first:
+      213: 4404043047907326218
+    second: ChestAnim-removebg_40
+  - first:
+      213: 4090266119654954761
+    second: ChestAnim-removebg_41
+  - first:
+      213: 961139094793453434
+    second: ChestAnim-removebg_42
+  - first:
+      213: 6633422891057457489
+    second: ChestAnim-removebg_43
+  - first:
+      213: 1219105934925950279
+    second: ChestAnim-removebg_44
+  - first:
+      213: 5796843298982011285
+    second: ChestAnim-removebg_45
+  - first:
+      213: 1988839865905369654
+    second: ChestAnim-removebg_46
+  - first:
+      213: -5124107026350534911
+    second: ChestAnim-removebg_47
+  - first:
+      213: -3292824199757041089
+    second: ChestAnim-removebg_48
+  - first:
+      213: -8513074730978539427
+    second: ChestAnim-removebg_49
+  - first:
+      213: -3537519676637598582
+    second: ChestAnim-removebg_50
+  - first:
+      213: -8812484590576005408
+    second: ChestAnim-removebg_51
+  - first:
+      213: 8891006707412877914
+    second: ChestAnim-removebg_52
+  - first:
+      213: 5195457901357604988
+    second: ChestAnim-removebg_53
+  - first:
+      213: -6306642681327858337
+    second: ChestAnim-removebg_54
+  - first:
+      213: -6523505398226936941
+    second: ChestAnim-removebg_55
+  - first:
+      213: 2962139191525770072
+    second: ChestAnim-removebg_56
+  - first:
+      213: 928496769567558757
+    second: ChestAnim-removebg_57
+  - first:
+      213: 3698308029661552582
+    second: ChestAnim-removebg_58
+  - first:
+      213: 6826460708509317828
+    second: ChestAnim-removebg_59
+  - first:
+      213: -3289303670018709921
+    second: ChestAnim-removebg_60
+  - first:
+      213: 4815490035274422922
+    second: ChestAnim-removebg_61
+  - first:
+      213: -3242993859540699733
+    second: ChestAnim-removebg_62
+  - first:
+      213: -656127327420820654
+    second: ChestAnim-removebg_63
+  - first:
+      213: 9043642556997632388
+    second: ChestAnim-removebg_64
+  - first:
+      213: -4424714541010356162
+    second: ChestAnim-removebg_65
+  - first:
+      213: -7049480545009934348
+    second: ChestAnim-removebg_66
+  - first:
+      213: 8772521661684075515
+    second: ChestAnim-removebg_67
+  - first:
+      213: 306306744317621122
+    second: ChestAnim-removebg_68
+  - first:
+      213: -7879973625883507298
+    second: ChestAnim-removebg_69
+  - first:
+      213: 4114138759216242508
+    second: ChestAnim-removebg_70
+  - first:
+      213: 7595239636135834468
+    second: ChestAnim-removebg_71
+  - first:
+      213: -8633440455113840934
+    second: ChestAnim-removebg_72
+  - first:
+      213: -7044521295920083258
+    second: ChestAnim-removebg_73
+  - first:
+      213: 2837171632353834477
+    second: ChestAnim-removebg_74
+  - first:
+      213: -9050068860042645329
+    second: ChestAnim-removebg_75
+  - first:
+      213: -7335863647060583765
+    second: ChestAnim-removebg_76
+  - first:
+      213: -6320922381600356756
+    second: ChestAnim-removebg_77
+  - first:
+      213: 5245778715054164901
+    second: ChestAnim-removebg_78
+  - first:
+      213: 3612433941565857986
+    second: ChestAnim-removebg_79
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ChestAnim-removebg_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4978.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd58c8a48a8e3f810800000000000000
+      internalID: 1798036485753832923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_1
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 4978.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915d6307dedd0de90800000000000000
+      internalID: -7002853408701491943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_2
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 4978.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116089259e7a44e50800000000000000
+      internalID: 6792738758536463889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_3
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 4978.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cb68f83808d5570800000000000000
+      internalID: 8457056977808702536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_4
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 4978.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d730b5dd2b29aa030800000000000000
+      internalID: 3506776556776915837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_5
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 4978.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085d0f83e1205dae0800000000000000
+      internalID: -1525310569967463040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_6
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 4978.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04fa894bd820d0290800000000000000
+      internalID: -7922673361831284928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_7
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 4978.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc0fcd44868b66f0800000000000000
+      internalID: -690310215072019248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4425.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9935ac46a8379df50800000000000000
+      internalID: 6906678541783028633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_9
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 4425.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57ca21bebb1e1db0800000000000000
+      internalID: -4819384045409745061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_10
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 4425.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130d8d55b421191f0800000000000000
+      internalID: -1040029924173754319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_11
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 4425.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d119e9aa706b2b0800000000000000
+      internalID: -5569255459810894542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_12
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 4425.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09dbf33fca321f610800000000000000
+      internalID: 1653141763944070544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_13
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 4425.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7b15e247cb0ce80800000000000000
+      internalID: -8160315317616003077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_14
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 4425.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9baadff8c36a905e0800000000000000
+      internalID: -1942838985189643591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_15
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 4425.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63043219b4bd9aa30800000000000000
+      internalID: 4227150842867957814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3872.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 812b80db268e9fe20800000000000000
+      internalID: 3384992105721541144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_17
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 3872.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc205f72be9876d50800000000000000
+      internalID: 6730499811209183951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_18
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 3872.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe49f03b4853a45a0800000000000000
+      internalID: -6536353065118755601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_19
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 3872.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f6bbca4c9f95e00800000000000000
+      internalID: 1034132212565110531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_20
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 3872.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3dead97750a1ac0800000000000000
+      internalID: -3883785717348903998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_21
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 3872.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3504881ca9347850800000000000000
+      internalID: 6373782783944557883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_22
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 3872.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b037fccf4ed928640800000000000000
+      internalID: 5080796936446898955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_23
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 3872.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b862b1a62028faf10800000000000000
+      internalID: 2283186482981840523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3319.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1f49f18b56829d0800000000000000
+      internalID: -2798875326932520469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_25
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 3319.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfd8a5b24eebeb40800000000000000
+      internalID: 5470728142654595010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_26
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 3319.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eacd226009081300800000000000000
+      internalID: 222938078806657768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_27
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 3319.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32a677192b5bce90800000000000000
+      internalID: -7004404563399237058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_28
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 3319.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed002c5fca6c3430800000000000000
+      internalID: 3764000827411271146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_29
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 3319.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e1168c6a652feb30800000000000000
+      internalID: 4318711706689081830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_30
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 3319.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d9fb9b8593dd8f0800000000000000
+      internalID: -514191729214120679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_31
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 3319.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b358ae9d842292a0800000000000000
+      internalID: -6732278302294649936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2766.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4d4ef455159d8a0800000000000000
+      internalID: -6279898778536979206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_33
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 2766.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6e1c980c5b78740800000000000000
+      internalID: 5154288137098356457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_34
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 2766.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5854bd338ddf6050800000000000000
+      internalID: 5796094801194801247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_35
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 2766.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804ee72fabeee3e50800000000000000
+      internalID: 6791127774821016584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_36
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 2766.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3051030baaae62310800000000000000
+      internalID: 1380048354656916739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_37
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 2766.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d50d67dc956f0cf0800000000000000
+      internalID: -283896527197501997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_38
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 2766.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d91589f78d811e30800000000000000
+      internalID: 4472511520101964246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_39
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 2766.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fcf11cc41fd0cd0800000000000000
+      internalID: -2590148898708271267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2213.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a097b0681dd4e1d30800000000000000
+      internalID: 4404043047907326218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_41
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 2213.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90759da5d5b83c830800000000000000
+      internalID: 4090266119654954761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_42
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 2213.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f77e41ae6a65d00800000000000000
+      internalID: 961139094793453434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_43
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 2213.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159ac6a59f6ae0c50800000000000000
+      internalID: 6633422891057457489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_44
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 2213.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74de4d283622be010800000000000000
+      internalID: 1219105934925950279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_45
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 2213.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5912d667446827050800000000000000
+      internalID: 5796843298982011285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_46
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 2213.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632dc6a1257c99b10800000000000000
+      internalID: 1988839865905369654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_47
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 2213.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f0b47eec383e8b0800000000000000
+      internalID: -5124107026350534911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1660.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32fba126d98d42d0800000000000000
+      internalID: -3292824199757041089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_49
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1660.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d588ba9e2ab7bd980800000000000000
+      internalID: -8513074730978539427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_50
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1660.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8caf00c89438eec0800000000000000
+      internalID: -3537519676637598582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_51
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 1660.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee0d1694f3c3b580800000000000000
+      internalID: -8812484590576005408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_52
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 1660.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52c5fa6e73336b70800000000000000
+      internalID: 8891006707412877914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_53
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 1660.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70aaef3f69f91840800000000000000
+      internalID: 5195457901357604988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_54
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 1660.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5dc22635ed4a78a0800000000000000
+      internalID: -6306642681327858337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_55
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 1660.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b1750476ad775a0800000000000000
+      internalID: -6523505398226936941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1107.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853082e86e1ab1920800000000000000
+      internalID: 2962139191525770072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_57
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1107.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c0c2d74eea2ec00800000000000000
+      internalID: 928496769567558757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_58
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1107.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf93f9fe87035330800000000000000
+      internalID: 3698308029661552582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_59
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 1107.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cafbd3a8d57cbe50800000000000000
+      internalID: 6826460708509317828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_60
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 1107.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5665265dbb0a52d0800000000000000
+      internalID: -3289303670018709921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_61
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 1107.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a17fb6cae04d240800000000000000
+      internalID: 4815490035274422922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_62
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 1107.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5bd4154429ef2d0800000000000000
+      internalID: -3242993859540699733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_63
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 1107.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253d7a90ca7f4e6f0800000000000000
+      internalID: -656127327420820654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 554.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48103758df8718d70800000000000000
+      internalID: 9043642556997632388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_65
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 554.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38729e61914892c0800000000000000
+      internalID: -4424714541010356162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_66
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 554.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ffd7a74bc63b2e90800000000000000
+      internalID: -7049480545009934348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_67
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 554.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb4915f8f14eb970800000000000000
+      internalID: 8772521661684075515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_68
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 554.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283bb5f6c58304400800000000000000
+      internalID: 306306744317621122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_69
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 554.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9544c5bcb5b4a290800000000000000
+      internalID: -7879973625883507298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_70
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 554.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f10c3676b581930800000000000000
+      internalID: 4114138759216242508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_71
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 554.8
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463f7df2536b76960800000000000000
+      internalID: 7595239636135834468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.7999878
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6e373e5abdf2880800000000000000
+      internalID: -8633440455113840934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_73
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1.7999878
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce42007435dc3e90800000000000000
+      internalID: -7044521295920083258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_74
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1.7999878
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de5f3415198af5720800000000000000
+      internalID: 2837171632353834477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_75
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 1.7999878
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa075543252b76280800000000000000
+      internalID: -9050068860042645329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_76
+      rect:
+        serializedVersion: 2
+        x: 2256
+        y: 1.7999878
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa904c41e6c13a90800000000000000
+      internalID: -7335863647060583765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_77
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 1.7999878
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6605e765929748a0800000000000000
+      internalID: -6320922381600356756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_78
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 1.7999878
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abcb11b2ffbcc840800000000000000
+      internalID: 5245778715054164901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestAnim-removebg_79
+      rect:
+        serializedVersion: 2
+        x: 3948
+        y: 1.7999878
+        width: 564.875
+        height: 553.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0e895c781f12230800000000000000
+      internalID: 3612433941565857986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
