@@ -10,6 +10,7 @@
     public string tokenId;
     public string tokenUri;
     public TypeCard type;
+    public int position;
 
 }
 public enum TypeCard
@@ -33,7 +34,8 @@ public enum TypeFaction
     NATURE,
     BALANCE,
     FORTUNE,
-    WAR
+    WAR,
+    NEUTRAL
 }
 public enum TypeCoreSkill
 {

@@ -8,10 +8,22 @@ public class DataManager : Singleton<DataManager>
     public UserModel userInfo = new UserModel();
     public ZombieModel[] listCard;
     public DeckModel[] listDeckUser;
+    public List<NotificationModel> listNotificationUser;
     public double balanceEthUser;
+    public double PackFee;
     public Dictionary<string, List<ZombieModel>> listCardMosterUser = new Dictionary<string, List<ZombieModel>>(); 
     public Dictionary<string, List<ZombieModel>> listCardEquipmentUser = new Dictionary<string, List<ZombieModel>>();
     public AuctionModel[] listAllAuction;
+    public MatchModel matchStarted;
+    public void AddNotification(NotificationModel notification)
+    {
+        if(listNotificationUser == null)
+        {
+            listNotificationUser = new List<NotificationModel>();
+        }
+        listNotificationUser.Insert(0, notification);
+
+    }    
     public void ClassifyCardUser()
     {
         ZombieModel[] arrCard = listCard;
@@ -108,7 +120,16 @@ public class DataManager : Singleton<DataManager>
             PlayerPrefs.SetString(DATA_USER.InputPassword, value);
         }
     }
+    public bool isReadAllNotification()
+    {
 
+        for (int i = 0; i < listNotificationUser.Count; i++)
+        {
+            if (!listNotificationUser[i].isRead)
+                return false;
+        }
+        return true;
+    }
 
 }
 public class UserWalletModel

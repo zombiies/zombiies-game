@@ -3840,6 +3840,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: SDK
       objectReference: {fileID: 0}
+    - target: {fileID: 5694317582827606040, guid: a7938549c3d286946824b4a89906d57a,
+        type: 3}
+      propertyPath: sprBorderCardIGs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694317582827606040, guid: a7938549c3d286946824b4a89906d57a,
+        type: 3}
+      propertyPath: sprBorderCards.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ae9254751dfbe8439cc301dbd214210,
+        type: 3}
+    - target: {fileID: 5694317582827606040, guid: a7938549c3d286946824b4a89906d57a,
+        type: 3}
+      propertyPath: sprBorderCardIGs.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: a5d3477e85499244fb301c2df3233a96,
+        type: 3}
+    - target: {fileID: 5694317582827606040, guid: a7938549c3d286946824b4a89906d57a,
+        type: 3}
+      propertyPath: sprBorderCardIGs.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: edc74f0e46a6e214ab99e337fd6d6a76,
+        type: 3}
+    - target: {fileID: 5694317582827606040, guid: a7938549c3d286946824b4a89906d57a,
+        type: 3}
+      propertyPath: sprBorderCardIGs.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ba00f059f6144f46bcce4d3be27fa7a,
+        type: 3}
+    - target: {fileID: 5694317582827606040, guid: a7938549c3d286946824b4a89906d57a,
+        type: 3}
+      propertyPath: sprBorderCardIGs.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9eee02aa2189e884cb8d6a20bc32de7b,
+        type: 3}
+    - target: {fileID: 5694317582827606040, guid: a7938549c3d286946824b4a89906d57a,
+        type: 3}
+      propertyPath: sprBorderCardIGs.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: b287423bd0e5eae4487f08e629ad7be2,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7938549c3d286946824b4a89906d57a, type: 3}
 --- !u!1 &2107636652
@@ -4036,6 +4077,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Loading
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436123904912046708, guid: 8da204037b400f449b0fd9a8e1fb7395,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -18.699997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8da204037b400f449b0fd9a8e1fb7395, type: 3}

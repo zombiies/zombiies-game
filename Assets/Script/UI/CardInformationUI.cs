@@ -14,6 +14,7 @@ public class CardInformationUI : MonoBehaviour
     [SerializeField] Text txtCrytal = default;
     [SerializeField] Text txtRanged = default;
     [SerializeField] Text txtRandom = default;
+    [SerializeField] Text txtArmor = default;
     [Header("IMAGE")]
     [SerializeField] Image imgElite = default;
     [SerializeField] Image imgBorder;
@@ -47,6 +48,9 @@ public class CardInformationUI : MonoBehaviour
                 break;
             case TypeFaction.WAR:
                 imgBorder.sprite = GlobalConfig.Instance.sprBorderCards[4];
+                break;
+            case TypeFaction.NEUTRAL:
+                imgBorder.sprite = GlobalConfig.Instance.sprBorderCards[5];
                 break;
         }
     }
@@ -112,6 +116,9 @@ public class CardInformationUI : MonoBehaviour
                 case TypeCoreSkill.RANDOM:
                     SetTextSkill(txtRandom, i);
                     break;
+                case TypeCoreSkill.ARMOR:
+                    SetTextSkill(txtArmor, i);
+                    break;
             }
         }
     }
@@ -138,6 +145,7 @@ public class CardInformationUI : MonoBehaviour
     #region Private Method
     private void SetTextSkill(Text skill, int index)
     {
+        if (cardInformation.skillZombies[index].value <= 0) return;
         skill.transform.parent.gameObject.SetActive(true);
         skill.text = cardInformation.skillZombies[index].value.ToString();
     }
