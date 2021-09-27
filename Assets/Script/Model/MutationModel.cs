@@ -15,4 +15,11 @@ public class MutationModel
     public AuctionModel[] allAuctions;
     public AuctionModel bid;
     public UserWalletModel ownedWallet;
+    public ZombieModel buyToken;
+    public List<NotificationModel> ownedNotifications;
+    public bool putCardToBoard;
+    public bool denyCard;
+    public bool confirmTurn;
+    public bool endTurn;
+    public bool surrender;
 }

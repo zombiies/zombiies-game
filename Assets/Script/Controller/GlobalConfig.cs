@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 public class GlobalConfig : Singleton<GlobalConfig>
 {
     public Sprite[] sprBorderCards;
+    public Sprite[] sprBorderCardIGs;
     public Sprite[] sprRaritys;
     public Sprite[] sprCoreSkill;
 

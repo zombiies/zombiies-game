@@ -67,7 +67,7 @@ namespace GraphQlClient.Core
 		
         public static async Task<UnityWebRequest> GetAsync(string url, string authToken = null){
             UnityWebRequest request = UnityWebRequest.Get(url);
-            if (!String.IsNullOrEmpty(authToken)) 
+            if (!String.IsNullOrEmpty(authToken))
                 request.SetRequestHeader("Authorization", "Bearer " + authToken);
             OnRequestBegin  requestBegin = new OnRequestBegin();
             requestBegin.FireEvent();
@@ -129,7 +129,15 @@ namespace GraphQlClient.Core
 		}
 
 		static async Task WebsocketInit(ClientWebSocket cws){
-			string jsonData = "{\"type\":\"connection_init\"}";
+			string jsonData = JsonConvert.SerializeObject(
+							new
+							{
+								type = "connection_init",
+								payload = new
+								{
+									Authorization = "Bearer " + DataManager.Instance.userInfo.token
+								}
+							}) ;
 			ArraySegment<byte> b = new ArraySegment<byte>(Encoding.ASCII.GetBytes(jsonData));
 			await cws.SendAsync(b, WebSocketMessageType.Text, true, CancellationToken.None);
 			GetWsReturn(cws);

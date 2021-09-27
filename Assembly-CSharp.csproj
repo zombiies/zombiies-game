@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{CD8C9303-404B-FB8D-6B9B-21988D5CAC0A}</ProjectGuid>
+    <ProjectGuid>{2AB1FCF6-76CA-B9DE-19E5-BE3ACBC1FB38}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -64,13 +64,91 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\CardInformation.cs" />
-    <Compile Include="Assets\Script\CardInformationUI.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Demo\Scripts\All1ShaderDemoController.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Demo\Scripts\All1TextureOffsetOverTime.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Demo\Scripts\AllIn1ScrollProperty.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Demo\Scripts\Demo2AutoScroll.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Demo\Scripts\DemoCamera.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Demo\Scripts\DemoCircleExpositor.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Demo\Scripts\DemoItem.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Demo\Scripts\DemoRandomColorSwap.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Demo\Scripts\DemoRepositionExpositor.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Scripts\All1CreateUnifiedOutline.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1Shader.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Scripts\AllIn1ShaderWindow.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Scripts\RandomSeed.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetAtlasUvs.cs" />
+    <Compile Include="Assets\AllIn1SpriteShader\Scripts\SetGlobalTime.cs" />
+    <Compile Include="Assets\Script\Controller\DataManager.cs" />
+    <Compile Include="Assets\Script\Controller\DontDestroyOnLoad.cs" />
+    <Compile Include="Assets\Script\Controller\GameController.cs" />
+    <Compile Include="Assets\Script\Controller\GlobalConfig.cs" />
+    <Compile Include="Assets\Script\Controller\GraphQLManager.cs" />
+    <Compile Include="Assets\Script\Controller\HomeController.cs" />
+    <Compile Include="Assets\Script\Controller\LoginController.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\AuctionPopupController.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\BIDPopUpController.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\BuyCardPopupController.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\DeckPopupController.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\LoadingPopUp.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\NotificationPopupController.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\PackPopupController.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\SelecCardPopupController.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\ShopPopupController.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\UpgradePopupController.cs" />
+    <Compile Include="Assets\Script\Controller\Popup\WaitForReadyPopupController.cs" />
+    <Compile Include="Assets\Script\Controller\RegisterController.cs" />
+    <Compile Include="Assets\Script\Controller\SceneController.cs" />
     <Compile Include="Assets\Script\DesignPattern\Singleton.cs" />
-    <Compile Include="Assets\Script\DontDestroyOnLoad.cs" />
-    <Compile Include="Assets\Script\GlobalConfig.cs" />
-    <Compile Include="Assets\Script\GraphQLManager.cs" />
-    <Compile Include="Assets\Script\TestRanged.cs" />
+    <Compile Include="Assets\Script\Model\AuctionModel.cs" />
+    <Compile Include="Assets\Script\Model\AuthModel.cs" />
+    <Compile Include="Assets\Script\Model\BidInput.cs" />
+    <Compile Include="Assets\Script\Model\ConfirmTurnEventModel.cs" />
+    <Compile Include="Assets\Script\Model\DataModel.cs" />
+    <Compile Include="Assets\Script\Model\DeckInput.cs" />
+    <Compile Include="Assets\Script\Model\DeckModel.cs" />
+    <Compile Include="Assets\Script\Model\EndTurnEventModel.cs" />
+    <Compile Include="Assets\Script\Model\ErrorModel.cs" />
+    <Compile Include="Assets\Script\Model\LevelUpCardInput.cs" />
+    <Compile Include="Assets\Script\Model\LoginModel.cs" />
+    <Compile Include="Assets\Script\Model\MatchModel.cs" />
+    <Compile Include="Assets\Script\Model\MutationModel.cs" />
+    <Compile Include="Assets\Script\Model\NotificationModel.cs" />
+    <Compile Include="Assets\Script\Model\PrepareTurnEventModel.cs" />
+    <Compile Include="Assets\Script\Model\RegisterModel.cs" />
+    <Compile Include="Assets\Script\Model\RoomModel.cs" />
+    <Compile Include="Assets\Script\Model\StartAuctionInput.cs" />
+    <Compile Include="Assets\Script\Model\SubscriptionModel.cs" />
+    <Compile Include="Assets\Script\Model\TokenInDeckInput.cs" />
+    <Compile Include="Assets\Script\Model\TokenModel.cs" />
+    <Compile Include="Assets\Script\Model\UserModel.cs" />
+    <Compile Include="Assets\Script\Plugins\AsyncAwaitUtil\Source\AwaitExtensions.cs" />
+    <Compile Include="Assets\Script\Plugins\AsyncAwaitUtil\Source\Awaiters.cs" />
+    <Compile Include="Assets\Script\Plugins\AsyncAwaitUtil\Source\IEnumeratorAwaitExtensions.cs" />
+    <Compile Include="Assets\Script\Plugins\AsyncAwaitUtil\Source\Internal\AsyncCoroutineRunner.cs" />
+    <Compile Include="Assets\Script\Plugins\AsyncAwaitUtil\Source\Internal\SyncContextUtil.cs" />
+    <Compile Include="Assets\Script\Plugins\AsyncAwaitUtil\Source\TaskExtensions.cs" />
+    <Compile Include="Assets\Script\Plugins\AsyncAwaitUtil\Source\WaitForBackgroundThread.cs" />
+    <Compile Include="Assets\Script\Plugins\AsyncAwaitUtil\Source\WaitForUpdate.cs" />
+    <Compile Include="Assets\Script\Plugins\AsyncAwaitUtil\Tests\AsyncUtilTests.cs" />
+    <Compile Include="Assets\Script\Plugins\AsyncAwaitUtil\Tests\Util\TestButtonHandler.cs" />
+    <Compile Include="Assets\Script\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\Script\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\Script\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\Script\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\Script\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\Script\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\Script\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Script\UI\CardInBuyPack.cs" />
+    <Compile Include="Assets\Script\UI\CardInformation.cs" />
+    <Compile Include="Assets\Script\UI\CardInformationUI.cs" />
+    <Compile Include="Assets\Script\UI\ChestAnim.cs" />
+    <Compile Include="Assets\Script\UI\ElementCard.cs" />
+    <Compile Include="Assets\Script\UI\EventAnimation.cs" />
+    <Compile Include="Assets\Script\UI\IGCardUI.cs" />
+    <Compile Include="Assets\Script\UI\NotificationElementUI.cs" />
+    <Compile Include="Assets\Script\UI\ShopElementUI.cs" />
+    <Compile Include="Assets\Script\UI\SkillCardUI.cs" />
     <Compile Include="Assets\Script\Zombiie\ZombieModel.cs" />
     <Compile Include="Assets\graphQl-client\Demo\Pokemon\Pokemon.cs" />
     <Compile Include="Assets\graphQl-client\Demo\Users\User.cs" />
@@ -80,10 +158,15 @@
     <Compile Include="Assets\graphQl-client\Scripts\EventCallbacks\AllEventInfo.cs" />
     <Compile Include="Assets\graphQl-client\Scripts\EventCallbacks\Event.cs" />
     <None Include="Assets\Userschema.txt" />
-    <None Include="Assets\JsonDotNet\link.xml" />
+    <None Include="Assets\AllIn1SpriteShader\Resources\AllIn1SpriteShader.shader" />
+    <None Include="Assets\AllIn1SpriteShader\Resources\AllIn1SpriteShaderScaledTime.shader" />
+    <None Include="Assets\AllIn1SpriteShader\Resources\AllIn1SpriteShaderUiMask.shader" />
+    <None Include="Assets\GraphQL APIschema.txt" />
     <None Include="Assets\Api Referenceschema.txt" />
     <None Include="Assets\Testschema.txt" />
+    <None Include="Assets\Script\Plugins\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Pokemonschema.txt" />
+    <None Include="Assets\AllIn1SpriteShader\Resources\AllIn1OneShaderFunctions.cginc" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.23f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -261,11 +344,35 @@
     <Reference Include="UnityEditor">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.23f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="GraphQL.Client.Abstractions">
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Assets/Script/Plugins/GraphQL.Client.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphQL.Client.Abstractions.Websocket">
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Assets/Script/Plugins/GraphQL.Client.Abstractions.Websocket.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphQL.Client">
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Assets/Script/Plugins/GraphQL.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphQL.Client.Serializer.Newtonsoft">
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Assets/Script/Plugins/GraphQL.Client.Serializer.Newtonsoft.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphQL.Primitives">
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Assets/Script/Plugins/GraphQL.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Assets/Script/Plugins/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive">
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Assets/Script/Plugins/System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Assets/Script/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Assets/Script/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Assets/Script/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.23f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -613,42 +720,40 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.23f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.DeviceSimulator.Editor">
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/UnityProject/CryptoZombie/Unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/UnityProject/CryptoZombie/UnityZ/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{2662B409-6332-1E56-D797-C9025C53BDD6}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -33,11 +33,11 @@ public class ElementCard : MonoBehaviour
             case TypeCard.EQUIPMENT:
                 if (DataManager.Instance.listCardEquipmentUser.ContainsKey(cardInformation.nameCard))
                 {
-                    if (SelecCardPopupController.Instance)
+                    if (HomeController.Instance)
                     {
-                        if (SelecCardPopupController.Instance.gameObject.activeSelf)
-                            SelecCardPopupController.Instance.gameObject.SetActive(false);
-                        SelecCardPopupController.Instance.gameObject.SetActive(true);
+                        if (HomeController.Instance.SelectCardPopUp.activeSelf)
+                            HomeController.Instance.SelectCardPopUp.SetActive(false);
+                        HomeController.Instance.SelectCardPopUp.SetActive(true);
                         SelecCardPopupController.Instance.Init(DataManager.Instance.listCardEquipmentUser[cardInformation.nameCard]);
                     }
                 }

@@ -658,7 +658,7 @@ MonoBehaviour:
     isComplete: 1
   - name: GetPackFee
     type: 0
-    query: 
+    query: "query GetPackFee{\n    getPackFee\n}"
     queryString: getPackFee
     returnType: String
     queryOptions:
@@ -675,7 +675,7 @@ MonoBehaviour:
     - ownedDecks
     - isCardInDeck
     fields: []
-    isComplete: 0
+    isComplete: 1
   - name: GetWallet
     type: 0
     query: "query GetWallet{\n    ownedWallet{\n        address\n        balance\n   
@@ -1321,11 +1321,91 @@ MonoBehaviour:
         type: Boolean
       hasChanged: 0
     isComplete: 1
+  - name: OwnedNotifications
+    type: 0
+    query: "query OwnedNotifications{\n    ownedNotifications{\n        id\n       
+      createdAt\n        content\n        isRead\n    }\n}"
+    queryString: ownedNotifications
+    returnType: NotificationModel
+    queryOptions:
+    - me
+    - ownedWallet
+    - allCards
+    - getPackFee
+    - ownedCardTokens
+    - allAuctions
+    - ownedAuctions
+    - participatedAuctions
+    - ownedNotifications
+    - ownedDecks
+    - isCardInDeck
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: createdAt
+        type: String
+      - name: content
+        type: String
+      - name: isRead
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: createdAt
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: createdAt
+        type: String
+      - name: content
+        type: String
+      - name: isRead
+        type: Boolean
+      hasChanged: 0
+    - index: 2
+      name: content
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: createdAt
+        type: String
+      - name: content
+        type: String
+      - name: isRead
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: isRead
+      type: Boolean
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: createdAt
+        type: String
+      - name: content
+        type: String
+      - name: isRead
+        type: Boolean
+      hasChanged: 0
+    isComplete: 1
   mutations:
   - name: Register
     type: 1
-    query: "mutation Register{\n    signup(  input :{ username :\"lamlam\", email
-      :\"lamlam@gmail.com\", password :\"nguyenlam1\"} ){\n        user{\n           
+    query: "mutation Register{\n    signup(  input :{ username :\"nguyenlam\", email
+      :\"lam123@gmail.com\", password :\"nguyenlam1\"} ){\n        user{\n           
       id\n            isVerified\n            email\n            username\n       
       }\n        token{\n            accessToken\n        }\n    }\n}"
     queryString: signup
@@ -1428,7 +1508,7 @@ MonoBehaviour:
     isComplete: 1
   - name: Login
     type: 1
-    query: "mutation Login{\n    login(  input :{ email :\"admin@gmail.com\", password
+    query: "mutation Login{\n    login(  input :{ email :\"user1@gmail.com\", password
       :\"Password1!\"} ){\n        user{\n            isVerified\n            id\n           
       email\n            username\n        }\n        token{\n            accessToken\n       
       }\n    }\n}"
@@ -1532,11 +1612,11 @@ MonoBehaviour:
     isComplete: 1
   - name: CreateDeck
     type: 1
-    query: "mutation CreateDeck{\n    createDeck{\n        id\n        cards{\n           
-      cost\n            level\n            skills{\n                type\n               
-      value\n        }\n            name\n            rareLevel\n            faction\n           
-      type\n            tokenUri\n            tokenId\n            position\n       
-      }\n        name\n    }\n}"
+    query: "mutation CreateDeck{\n    createDeck(  input :{ name :\"Deck 1\"} ){\n       
+      id\n        cards{\n            cost\n            level\n            skills{\n               
+      type\n                value\n        }\n            name\n            rareLevel\n           
+      faction\n            type\n            tokenUri\n            tokenId\n           
+      position\n        }\n        name\n    }\n}"
     queryString: createDeck
     returnType: DeckModel
     queryOptions:
@@ -1887,8 +1967,8 @@ MonoBehaviour:
     isComplete: 1
   - name: AddCardToDeck
     type: 1
-    query: "mutation AddCardToDeck{\n    addCardToDeck(  input :{ tokenId :\"0x20\",
-      deckId :\"613ca6399810614a55d4b3ab\"} ){\n        id\n        cards{\n           
+    query: "mutation AddCardToDeck{\n    addCardToDeck(  input :{ tokenId :\"0x0119\",
+      deckId :\"614b282871beb2fb055a80db\"} ){\n        id\n        cards{\n           
       cost\n            level\n            skills{\n                type\n               
       value\n        }\n            name\n            rareLevel\n            faction\n           
       type\n            tokenUri\n            tokenId\n            position\n       
@@ -2244,7 +2324,7 @@ MonoBehaviour:
   - name: RemoveCardFromDeck
     type: 1
     query: "mutation RemoveCardFromDeck{\n    removeCardFromDeck(  input :{ tokenId
-      :\"0x20\", deckId :\"613ca6399810614a55d4b3ab\"} ){\n        id\n        cards{\n           
+      :\"0xd8\", deckId :\"614b282871beb2fb055a80db\"} ){\n        id\n        cards{\n           
       cost\n            level\n            skills{\n                type\n               
       value\n        }\n            name\n            rareLevel\n            faction\n           
       type\n            tokenUri\n            tokenId\n            position\n       
@@ -2981,5 +3061,7834 @@ MonoBehaviour:
         type: Boolean
       hasChanged: 0
     isComplete: 1
-  subscriptions: []
+  - name: BuyToken
+    type: 1
+    query: "mutation BuyToken{\n    buyToken{\n        cost\n        level\n       
+      skills{\n            type\n            value\n        }\n        name\n       
+      rareLevel\n        faction\n        type\n        tokenUri\n        tokenId\n   
+      }\n}"
+    queryString: buyToken
+    returnType: CardTokenModel
+    queryOptions:
+    - signup
+    - login
+    - buyToken
+    - levelUpCard
+    - startAuction
+    - bid
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    - pushNotification
+    - markAllNotificationsAsRead
+    fields:
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 02000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 02000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: FindMatch
+    type: 1
+    query: "mutation FindMatch{\n    findMatch{\n        id\n    }\n}"
+    queryString: findMatch
+    returnType: RoomModel
+    queryOptions:
+    - findMatch
+    - stopFindMatch
+    - ready
+    - signup
+    - login
+    - buyToken
+    - levelUpCard
+    - startAuction
+    - bid
+    - pushNotification
+    - markAllNotificationsAsRead
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: player1
+        type: String
+      - name: player2
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: StopFindMatch
+    type: 1
+    query: "mutation StopFindMatch{\n    stopFindMatch\n}"
+    queryString: stopFindMatch
+    returnType: Boolean
+    queryOptions:
+    - findMatch
+    - stopFindMatch
+    - ready
+    - signup
+    - login
+    - buyToken
+    - levelUpCard
+    - startAuction
+    - bid
+    - pushNotification
+    - markAllNotificationsAsRead
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    fields: []
+    isComplete: 1
+  - name: ReadyMatch
+    type: 1
+    query: "mutation ReadyMatch{\n    ready\n}"
+    queryString: ready
+    returnType: Boolean
+    queryOptions:
+    - findMatch
+    - stopFindMatch
+    - ready
+    - signup
+    - login
+    - buyToken
+    - levelUpCard
+    - startAuction
+    - bid
+    - pushNotification
+    - markAllNotificationsAsRead
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    fields: []
+    isComplete: 1
+  - name: MarkAllNotificationsAsRead
+    type: 1
+    query: "mutation MarkAllNotificationsAsRead{\n    markAllNotificationsAsRead\n}"
+    queryString: markAllNotificationsAsRead
+    returnType: Boolean
+    queryOptions:
+    - findMatch
+    - stopFindMatch
+    - ready
+    - signup
+    - login
+    - buyToken
+    - levelUpCard
+    - startAuction
+    - bid
+    - pushNotification
+    - markAllNotificationsAsRead
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    fields: []
+    isComplete: 1
+  - name: PutCardToBoard
+    type: 1
+    query: "mutation PutCardToBoard{\n    putCardToBoard(  position :1, tokenId :\"0xdc\"
+      )\n}"
+    queryString: putCardToBoard
+    returnType: Boolean
+    queryOptions:
+    - findMatch
+    - stopFindMatch
+    - ready
+    - putCardToBoard
+    - denyCard
+    - confirmTurn
+    - endTurn
+    - surrender
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    - buyToken
+    - levelUpCard
+    - signup
+    - login
+    - startAuction
+    - bid
+    - pushNotification
+    - markAllNotificationsAsRead
+    fields: []
+    isComplete: 1
+  - name: DenyCard
+    type: 1
+    query: 
+    queryString: denyCard
+    returnType: Boolean
+    queryOptions:
+    - findMatch
+    - stopFindMatch
+    - ready
+    - putCardToBoard
+    - denyCard
+    - confirmTurn
+    - endTurn
+    - surrender
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    - buyToken
+    - levelUpCard
+    - signup
+    - login
+    - startAuction
+    - bid
+    - pushNotification
+    - markAllNotificationsAsRead
+    fields: []
+    isComplete: 0
+  - name: ConfirmTurn
+    type: 1
+    query: "mutation ConfirmTurn{\n    confirmTurn\n}"
+    queryString: confirmTurn
+    returnType: Boolean
+    queryOptions:
+    - findMatch
+    - stopFindMatch
+    - ready
+    - putCardToBoard
+    - denyCard
+    - confirmTurn
+    - endTurn
+    - surrender
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    - buyToken
+    - levelUpCard
+    - signup
+    - login
+    - startAuction
+    - bid
+    - pushNotification
+    - markAllNotificationsAsRead
+    fields: []
+    isComplete: 1
+  - name: EndTurn
+    type: 1
+    query: 
+    queryString: endTurn
+    returnType: Boolean
+    queryOptions:
+    - findMatch
+    - stopFindMatch
+    - ready
+    - putCardToBoard
+    - denyCard
+    - confirmTurn
+    - endTurn
+    - surrender
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    - buyToken
+    - levelUpCard
+    - signup
+    - login
+    - startAuction
+    - bid
+    - pushNotification
+    - markAllNotificationsAsRead
+    fields: []
+    isComplete: 0
+  - name: Surrender
+    type: 1
+    query: "mutation Surrender{\n    surrender\n}"
+    queryString: surrender
+    returnType: Boolean
+    queryOptions:
+    - findMatch
+    - stopFindMatch
+    - ready
+    - putCardToBoard
+    - denyCard
+    - confirmTurn
+    - endTurn
+    - surrender
+    - createDeck
+    - updateDeck
+    - deleteDeck
+    - addCardToDeck
+    - removeCardFromDeck
+    - buyToken
+    - levelUpCard
+    - signup
+    - login
+    - startAuction
+    - bid
+    - pushNotification
+    - markAllNotificationsAsRead
+    fields: []
+    isComplete: 1
+  subscriptions:
+  - name: NotificationPushed
+    type: 2
+    query: "subscription NotificationPushed{\n    notificationPushed{\n        id\n       
+      createdAt\n        content\n        isRead\n    }\n}"
+    queryString: notificationPushed
+    returnType: NotificationModel
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - notificationPushed
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: createdAt
+        type: String
+      - name: content
+        type: String
+      - name: isRead
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: createdAt
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: createdAt
+        type: String
+      - name: content
+        type: String
+      - name: isRead
+        type: Boolean
+      hasChanged: 0
+    - index: 2
+      name: content
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: createdAt
+        type: String
+      - name: content
+        type: String
+      - name: isRead
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: isRead
+      type: Boolean
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: createdAt
+        type: String
+      - name: content
+        type: String
+      - name: isRead
+        type: Boolean
+      hasChanged: 0
+    isComplete: 1
+  - name: Online
+    type: 2
+    query: "subscription Online{\n    online\n}"
+    queryString: online
+    returnType: Boolean
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - notificationPushed
+    fields: []
+    isComplete: 1
+  - name: AllReady
+    type: 2
+    query: "subscription AllReady{\n    onAllReady{\n        id\n        player1\n       
+      player2\n    }\n}"
+    queryString: onAllReady
+    returnType: RoomModel
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - notificationPushed
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: player1
+        type: String
+      - name: player2
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: player1
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: player1
+        type: String
+      - name: player2
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: player2
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: player1
+        type: String
+      - name: player2
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: ReadyTimeout
+    type: 2
+    query: "subscription ReadyTimeout{\n    onReadyTimeout{\n        id\n       
+      player1\n        player2\n    }\n}"
+    queryString: onReadyTimeout
+    returnType: RoomModel
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - notificationPushed
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: player1
+        type: String
+      - name: player2
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: player1
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: player1
+        type: String
+      - name: player2
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: player2
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: player1
+        type: String
+      - name: player2
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: WaitForReady
+    type: 2
+    query: "subscription WaitForReady{\n    onWaitForReady{\n        id\n       
+      player1\n        player2\n    }\n}"
+    queryString: onWaitForReady
+    returnType: RoomModel
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - notificationPushed
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: player1
+        type: String
+      - name: player2
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: player1
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: player1
+        type: String
+      - name: player2
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: player2
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: player1
+        type: String
+      - name: player2
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: MatchStarted
+    type: 2
+    query: "subscription MatchStarted{\n    matchStarted{\n        id\n        playerStatuses{\n           
+      onBoard{\n                cost\n                level\n                skills{\n                   
+      type\n                    value\n        }\n                name\n               
+      rareLevel\n                faction\n                type\n                tokenUri\n               
+      tokenId\n                equipment{\n                    cost\n                   
+      level\n                    skills{\n                        type\n                       
+      value\n        }\n                    tokenId\n                    name\n                   
+      rareLevel\n                    faction\n                    type\n                   
+      tokenUri\n        }\n                position\n        }\n            onHand{\n               
+      cost\n                level\n                skills{\n                    type\n                   
+      value\n        }\n                position\n                tokenUri\n               
+      tokenId\n                name\n                rareLevel\n                faction\n               
+      type\n        }\n            playerId\n            crystal\n            inTurn\n           
+      confirmTurn\n        }\n        winner{\n            id\n            wallet{\n               
+      balance\n                address\n        }\n            username\n           
+      email\n            isVerified\n        }\n    }\n}"
+    queryString: matchStarted
+    returnType: EndTurnEventModel
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - matchStarted
+    - prepareTurnEvent
+    - endTurnEvent
+    - matchEnded
+    - confirmTurnEvent
+    - rewardReceived
+    - notificationPushed
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: playerStatuses
+        type: PlayerStatusModel
+      - name: winner
+        type: UserModel
+      hasChanged: 0
+    - index: 1
+      name: playerStatuses
+      type: PlayerStatusModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: playerStatuses
+        type: PlayerStatusModel
+      - name: winner
+        type: UserModel
+      hasChanged: 0
+    - index: 0
+      name: onBoard
+      type: BoardCardModel
+      parentIndexes: 01000000
+      hasSubField: 1
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 0100000002000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 0100000002000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 0100000002000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 010000000200000005000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 010000000200000005000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 0100000002000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 0100000002000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 0100000002000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 0100000002000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 0100000002000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 0100000002000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 9
+      name: equipment
+      type: CardTokenModel
+      parentIndexes: 0100000002000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 01000000020000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 01000000020000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 01000000020000000e000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 01000000020000000e00000011000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 01000000020000000e00000011000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 01000000020000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 01000000020000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 01000000020000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 01000000020000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 01000000020000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 01000000020000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 10
+      name: position
+      type: Int
+      parentIndexes: 0100000002000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: onHand
+      type: DeckCardModel
+      parentIndexes: 01000000
+      hasSubField: 1
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 010000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 010000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 010000001b000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 010000001b0000001e000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 010000001b0000001e000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 9
+      name: position
+      type: Float
+      parentIndexes: 010000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 010000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 010000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 010000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 010000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 010000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 010000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 2
+      name: playerId
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: crystal
+      type: Float
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 4
+      name: inTurn
+      type: Boolean
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 5
+      name: confirmTurn
+      type: Boolean
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 2
+      name: winner
+      type: UserModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: playerStatuses
+        type: PlayerStatusModel
+      - name: winner
+        type: UserModel
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 2c000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: wallet
+      type: UserWalletModel
+      parentIndexes: 2c000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: balance
+      type: String
+      parentIndexes: 2c0000002e000000
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: address
+      type: String
+      parentIndexes: 2c0000002e000000
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: username
+      type: String
+      parentIndexes: 2c000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: email
+      type: String
+      parentIndexes: 2c000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 4
+      name: isVerified
+      type: Boolean
+      parentIndexes: 2c000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    isComplete: 1
+  - name: PrepareTurnEvent
+    type: 2
+    query: "subscription PrepareTurnEvent{\n    prepareTurnEvent{\n        type\n       
+      playerId\n        tokenId\n        toPosition\n        currentMatchStatus{\n           
+      id\n            winner{\n                wallet{\n                    balance\n                   
+      address\n        }\n                id\n                isVerified\n               
+      username\n                email\n        }\n            playerStatuses{\n               
+      onHand{\n                    cost\n                    level\n                   
+      skills{\n                        type\n                        value\n       
+      }\n                    name\n                    rareLevel\n                   
+      faction\n                    type\n                    tokenUri\n                   
+      tokenId\n                    position\n        }\n                onBoard{\n                   
+      cost\n                    level\n                    skills{\n                       
+      type\n                        value\n        }\n                    name\n                   
+      rareLevel\n                    faction\n                    type\n                   
+      tokenUri\n                    tokenId\n                    position\n                   
+      equipment{\n                        cost\n                        level\n                       
+      skills{\n                            type\n                            value\n       
+      }\n                        name\n                        rareLevel\n                       
+      faction\n                        type\n                        tokenUri\n                       
+      tokenId\n            }\n        }\n                crystal\n               
+      confirmTurn\n                inTurn\n                playerId\n           
+      }\n        }\n    }\n}"
+    queryString: prepareTurnEvent
+    returnType: PrepareTurnEventModel
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - matchStarted
+    - prepareTurnEvent
+    - endTurnEvent
+    - matchEnded
+    - confirmTurnEvent
+    - rewardReceived
+    - notificationPushed
+    fields:
+    - index: 0
+      name: type
+      type: PrepareTurnEventType
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: type
+        type: PrepareTurnEventType
+      - name: currentMatchStatus
+        type: MatchModel
+      - name: playerId
+        type: String
+      - name: tokenId
+        type: String
+      - name: toPosition
+        type: Float
+      hasChanged: 0
+    - index: 2
+      name: playerId
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: type
+        type: PrepareTurnEventType
+      - name: currentMatchStatus
+        type: MatchModel
+      - name: playerId
+        type: String
+      - name: tokenId
+        type: String
+      - name: toPosition
+        type: Float
+      hasChanged: 0
+    - index: 3
+      name: tokenId
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: type
+        type: PrepareTurnEventType
+      - name: currentMatchStatus
+        type: MatchModel
+      - name: playerId
+        type: String
+      - name: tokenId
+        type: String
+      - name: toPosition
+        type: Float
+      hasChanged: 0
+    - index: 4
+      name: toPosition
+      type: Float
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: type
+        type: PrepareTurnEventType
+      - name: currentMatchStatus
+        type: MatchModel
+      - name: playerId
+        type: String
+      - name: tokenId
+        type: String
+      - name: toPosition
+        type: Float
+      hasChanged: 0
+    - index: 1
+      name: currentMatchStatus
+      type: MatchModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: type
+        type: PrepareTurnEventType
+      - name: currentMatchStatus
+        type: MatchModel
+      - name: playerId
+        type: String
+      - name: tokenId
+        type: String
+      - name: toPosition
+        type: Float
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 04000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: playerStatuses
+        type: PlayerStatusModel
+      - name: winner
+        type: UserModel
+      hasChanged: 0
+    - index: 2
+      name: winner
+      type: UserModel
+      parentIndexes: 04000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: playerStatuses
+        type: PlayerStatusModel
+      - name: winner
+        type: UserModel
+      hasChanged: 0
+    - index: 1
+      name: wallet
+      type: UserWalletModel
+      parentIndexes: 0400000006000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: balance
+      type: String
+      parentIndexes: 040000000600000007000000
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: address
+      type: String
+      parentIndexes: 040000000600000007000000
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 0400000006000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 4
+      name: isVerified
+      type: Boolean
+      parentIndexes: 0400000006000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 2
+      name: username
+      type: String
+      parentIndexes: 0400000006000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: email
+      type: String
+      parentIndexes: 0400000006000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: playerStatuses
+      type: PlayerStatusModel
+      parentIndexes: 04000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: playerStatuses
+        type: PlayerStatusModel
+      - name: winner
+        type: UserModel
+      hasChanged: 0
+    - index: 1
+      name: onHand
+      type: DeckCardModel
+      parentIndexes: 040000000e000000
+      hasSubField: 1
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 040000000e0000000f000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 040000000e0000000f000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 040000000e0000000f000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 040000000e0000000f00000012000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 040000000e0000000f00000012000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 040000000e0000000f000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 040000000e0000000f000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 040000000e0000000f000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 040000000e0000000f000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 040000000e0000000f000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 040000000e0000000f000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 9
+      name: position
+      type: Float
+      parentIndexes: 040000000e0000000f000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 0
+      name: onBoard
+      type: BoardCardModel
+      parentIndexes: 040000000e000000
+      hasSubField: 1
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 040000000e0000001c0000001f000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 040000000e0000001c0000001f000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 10
+      name: position
+      type: Int
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 9
+      name: equipment
+      type: CardTokenModel
+      parentIndexes: 040000000e0000001c000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 040000000e0000001c00000029000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 040000000e0000001c00000029000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 040000000e0000001c00000029000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 040000000e0000001c000000290000002c000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 040000000e0000001c000000290000002c000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 040000000e0000001c00000029000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 040000000e0000001c00000029000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 040000000e0000001c00000029000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 040000000e0000001c00000029000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 040000000e0000001c00000029000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 040000000e0000001c00000029000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: crystal
+      type: Float
+      parentIndexes: 040000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 5
+      name: confirmTurn
+      type: Boolean
+      parentIndexes: 040000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 4
+      name: inTurn
+      type: Boolean
+      parentIndexes: 040000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 2
+      name: playerId
+      type: String
+      parentIndexes: 040000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    isComplete: 1
+  - name: EndTurnEvent
+    type: 2
+    query: "subscription EndTurnEvent{\n    endTurnEvent{\n        playerId\n       
+      currentMatchStatus{\n            id\n            winner{\n                id\n               
+      wallet{\n                    balance\n                    address\n       
+      }\n                username\n                email\n                isVerified\n       
+      }\n            playerStatuses{\n                playerId\n                crystal\n               
+      inTurn\n                confirmTurn\n                onHand{\n                   
+      cost\n                    level\n                    skills{\n                       
+      type\n                        value\n        }\n                    name\n                   
+      rareLevel\n                    faction\n                    type\n                   
+      tokenUri\n                    tokenId\n                    position\n       
+      }\n                onBoard{\n                    cost\n                   
+      level\n                    skills{\n                        type\n                       
+      value\n        }\n                    position\n                    equipment{\n                       
+      cost\n                        level\n                        skills{\n                           
+      type\n                            value\n        }\n                       
+      name\n                        rareLevel\n                        faction\n                       
+      type\n                        tokenUri\n                        tokenId\n       
+      }\n                    name\n                    rareLevel\n                   
+      faction\n                    type\n                    tokenId\n                   
+      tokenId\n                }\n            }\n        }\n    }\n}"
+    queryString: endTurnEvent
+    returnType: EndTurnEventModel
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - matchStarted
+    - prepareTurnEvent
+    - endTurnEvent
+    - matchEnded
+    - confirmTurnEvent
+    - rewardReceived
+    - notificationPushed
+    fields:
+    - index: 1
+      name: playerId
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: currentMatchStatus
+        type: MatchModel
+      - name: playerId
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: currentMatchStatus
+      type: MatchModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: currentMatchStatus
+        type: MatchModel
+      - name: playerId
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: playerStatuses
+        type: PlayerStatusModel
+      - name: winner
+        type: UserModel
+      hasChanged: 0
+    - index: 2
+      name: winner
+      type: UserModel
+      parentIndexes: 01000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: playerStatuses
+        type: PlayerStatusModel
+      - name: winner
+        type: UserModel
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 0100000003000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: wallet
+      type: UserWalletModel
+      parentIndexes: 0100000003000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: balance
+      type: String
+      parentIndexes: 010000000300000005000000
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: address
+      type: String
+      parentIndexes: 010000000300000005000000
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: username
+      type: String
+      parentIndexes: 0100000003000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: email
+      type: String
+      parentIndexes: 0100000003000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 4
+      name: isVerified
+      type: Boolean
+      parentIndexes: 0100000003000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: wallet
+        type: UserWalletModel
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: playerStatuses
+      type: PlayerStatusModel
+      parentIndexes: 01000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: playerStatuses
+        type: PlayerStatusModel
+      - name: winner
+        type: UserModel
+      hasChanged: 0
+    - index: 2
+      name: playerId
+      type: String
+      parentIndexes: 010000000b000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: crystal
+      type: Float
+      parentIndexes: 010000000b000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 4
+      name: inTurn
+      type: Boolean
+      parentIndexes: 010000000b000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 5
+      name: confirmTurn
+      type: Boolean
+      parentIndexes: 010000000b000000
+      hasSubField: 0
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: onHand
+      type: DeckCardModel
+      parentIndexes: 010000000b000000
+      hasSubField: 1
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 010000000b00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 010000000b00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 010000000b00000010000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 010000000b0000001000000013000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 010000000b0000001000000013000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 010000000b00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 010000000b00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 010000000b00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 010000000b00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 010000000b00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 010000000b00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 9
+      name: position
+      type: Float
+      parentIndexes: 010000000b00000010000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: position
+        type: Float
+      hasChanged: 0
+    - index: 0
+      name: onBoard
+      type: BoardCardModel
+      parentIndexes: 010000000b000000
+      hasSubField: 1
+      possibleFields:
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: playerId
+        type: String
+      - name: crystal
+        type: Float
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 010000000b0000001d00000020000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 010000000b0000001d00000020000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 10
+      name: position
+      type: Int
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 9
+      name: equipment
+      type: CardTokenModel
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 010000000b0000001d00000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 010000000b0000001d00000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 010000000b0000001d00000024000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 010000000b0000001d0000002400000027000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 010000000b0000001d0000002400000027000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 010000000b0000001d00000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 010000000b0000001d00000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 010000000b0000001d00000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 010000000b0000001d00000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 010000000b0000001d00000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 010000000b0000001d00000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 010000000b0000001d000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      - name: equipment
+        type: CardTokenModel
+      - name: position
+        type: Int
+      hasChanged: 0
+    isComplete: 1
+  - name: RewardReceived
+    type: 2
+    query: "subscription RewardReceived{\n    rewardReceived{\n        playerId\n       
+      token{\n            cost\n            level\n            skills{\n               
+      type\n                value\n        }\n            name\n            rareLevel\n           
+      faction\n            type\n            tokenUri\n            tokenId\n       
+      }\n    }\n}"
+    queryString: rewardReceived
+    returnType: RewardModel
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - matchStarted
+    - prepareTurnEvent
+    - endTurnEvent
+    - matchEnded
+    - confirmTurnEvent
+    - rewardReceived
+    - notificationPushed
+    fields:
+    - index: 1
+      name: playerId
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: token
+        type: CardTokenModel
+      - name: playerId
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: token
+      type: CardTokenModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: token
+        type: CardTokenModel
+      - name: playerId
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 01000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 0100000004000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 0100000004000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 3
+      name: name
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: faction
+      type: Faction
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: type
+      type: CardType
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 7
+      name: tokenUri
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: skills
+        type: CardSkillModel
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    isComplete: 1
+  - name: ConfirmTurnEvent
+    type: 2
+    query: "subscription ConfirmTurnEvent{\n    confirmTurnEvent{\n        playerId\n       
+      attacks{\n            toPosition\n            damage\n            tokenId\n           
+      skill{\n                type\n                value\n        }\n           
+      destroy\n            targetOnBoard{\n                cost\n               
+      level\n                name\n                rareLevel\n                faction\n               
+      type\n                tokenUri\n                skills{\n                   
+      type\n                    value\n        }\n                tokenId\n               
+      position\n                equipment{\n                    cost\n                   
+      level\n                    name\n                    rareLevel\n                   
+      faction\n                    type\n                    tokenUri\n                   
+      skills{\n                        type\n                        value\n       
+      }\n                    tokenId\n                }\n            }\n        }\n       
+      currentMatchStatus{\n            id\n            winner{\n                id\n               
+      username\n                email\n                isVerified\n               
+      wallet{\n                    balance\n                    address\n           
+      }\n        }\n            playerStatuses{\n                crystal\n               
+      playerId\n                inTurn\n                confirmTurn\n               
+      onHand{\n                    cost\n                    level\n                   
+      name\n                    rareLevel\n                    faction\n                   
+      type\n                    tokenUri\n                    skills{\n                       
+      type\n                        value\n        }\n                    tokenId\n                   
+      position\n        }\n                onBoard{\n                    cost\n                   
+      level\n                    name\n                    rareLevel\n                   
+      faction\n                    type\n                    tokenUri\n                   
+      skills{\n                        type\n                        value\n       
+      }\n                    equipment{\n                        cost\n                       
+      level\n                        name\n                        rareLevel\n                       
+      faction\n                        type\n                        tokenUri\n                       
+      skills{\n                            type\n                            value\n       
+      }\n                        tokenId\n        }\n                    tokenId\n                   
+      position\n                }\n            }\n        }\n    }\n}"
+    queryString: confirmTurnEvent
+    returnType: ConfirmTurnEventModel
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - matchStarted
+    - prepareTurnEvent
+    - endTurnEvent
+    - matchEnded
+    - confirmTurnEvent
+    - rewardReceived
+    - notificationPushed
+    fields:
+    - index: 0
+      name: playerId
+      type: String
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: playerId
+        type: String
+      - name: attacks
+        type: AttackEventModel
+      - name: currentMatchStatus
+        type: MatchModel
+      hasChanged: 0
+    - index: 1
+      name: attacks
+      type: AttackEventModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: playerId
+        type: String
+      - name: attacks
+        type: AttackEventModel
+      - name: currentMatchStatus
+        type: MatchModel
+      hasChanged: 0
+    - index: 0
+      name: toPosition
+      type: Int
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: toPosition
+        type: Int
+      - name: damage
+        type: Int
+      - name: tokenId
+        type: String
+      - name: skill
+        type: CardSkillModel
+      - name: destroy
+        type: Boolean
+      - name: targetOnBoard
+        type: BoardCardModel
+      hasChanged: 0
+    - index: 1
+      name: damage
+      type: Int
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: toPosition
+        type: Int
+      - name: damage
+        type: Int
+      - name: tokenId
+        type: String
+      - name: skill
+        type: CardSkillModel
+      - name: destroy
+        type: Boolean
+      - name: targetOnBoard
+        type: BoardCardModel
+      hasChanged: 0
+    - index: 2
+      name: tokenId
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: toPosition
+        type: Int
+      - name: damage
+        type: Int
+      - name: tokenId
+        type: String
+      - name: skill
+        type: CardSkillModel
+      - name: destroy
+        type: Boolean
+      - name: targetOnBoard
+        type: BoardCardModel
+      hasChanged: 0
+    - index: 3
+      name: skill
+      type: CardSkillModel
+      parentIndexes: 01000000
+      hasSubField: 1
+      possibleFields:
+      - name: toPosition
+        type: Int
+      - name: damage
+        type: Int
+      - name: tokenId
+        type: String
+      - name: skill
+        type: CardSkillModel
+      - name: destroy
+        type: Boolean
+      - name: targetOnBoard
+        type: BoardCardModel
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 0100000005000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 0100000005000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 4
+      name: destroy
+      type: Boolean
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: toPosition
+        type: Int
+      - name: damage
+        type: Int
+      - name: tokenId
+        type: String
+      - name: skill
+        type: CardSkillModel
+      - name: destroy
+        type: Boolean
+      - name: targetOnBoard
+        type: BoardCardModel
+      hasChanged: 0
+    - index: 5
+      name: targetOnBoard
+      type: BoardCardModel
+      parentIndexes: 01000000
+      hasSubField: 1
+      possibleFields:
+      - name: toPosition
+        type: Int
+      - name: damage
+        type: Int
+      - name: tokenId
+        type: String
+      - name: skill
+        type: CardSkillModel
+      - name: destroy
+        type: Boolean
+      - name: targetOnBoard
+        type: BoardCardModel
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 0100000009000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 0100000009000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 0100000009000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 3
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 0100000009000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 4
+      name: faction
+      type: Faction
+      parentIndexes: 0100000009000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 5
+      name: type
+      type: CardType
+      parentIndexes: 0100000009000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 6
+      name: tokenUri
+      type: String
+      parentIndexes: 0100000009000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 7
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 0100000009000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 010000000900000011000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 010000000900000011000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 0100000009000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 9
+      name: position
+      type: Int
+      parentIndexes: 0100000009000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 10
+      name: equipment
+      type: CardTokenModel
+      parentIndexes: 0100000009000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 010000000900000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 010000000900000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 010000000900000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 010000000900000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: faction
+      type: Faction
+      parentIndexes: 010000000900000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: type
+      type: CardType
+      parentIndexes: 010000000900000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: tokenUri
+      type: String
+      parentIndexes: 010000000900000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 7
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 010000000900000016000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 0100000009000000160000001e000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 0100000009000000160000001e000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 010000000900000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: currentMatchStatus
+      type: MatchModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: playerId
+        type: String
+      - name: attacks
+        type: AttackEventModel
+      - name: currentMatchStatus
+        type: MatchModel
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 22000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: winner
+        type: UserModel
+      - name: playerStatuses
+        type: PlayerStatusModel
+      hasChanged: 0
+    - index: 1
+      name: winner
+      type: UserModel
+      parentIndexes: 22000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: winner
+        type: UserModel
+      - name: playerStatuses
+        type: PlayerStatusModel
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 2200000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      - name: wallet
+        type: UserWalletModel
+      hasChanged: 0
+    - index: 1
+      name: username
+      type: String
+      parentIndexes: 2200000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      - name: wallet
+        type: UserWalletModel
+      hasChanged: 0
+    - index: 2
+      name: email
+      type: String
+      parentIndexes: 2200000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      - name: wallet
+        type: UserWalletModel
+      hasChanged: 0
+    - index: 3
+      name: isVerified
+      type: Boolean
+      parentIndexes: 2200000024000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      - name: wallet
+        type: UserWalletModel
+      hasChanged: 0
+    - index: 4
+      name: wallet
+      type: UserWalletModel
+      parentIndexes: 2200000024000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      - name: wallet
+        type: UserWalletModel
+      hasChanged: 0
+    - index: 1
+      name: balance
+      type: String
+      parentIndexes: 220000002400000029000000
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 0
+      name: address
+      type: String
+      parentIndexes: 220000002400000029000000
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: playerStatuses
+      type: PlayerStatusModel
+      parentIndexes: 22000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: winner
+        type: UserModel
+      - name: playerStatuses
+        type: PlayerStatusModel
+      hasChanged: 0
+    - index: 0
+      name: crystal
+      type: Int
+      parentIndexes: 220000002c000000
+      hasSubField: 0
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: playerId
+      type: String
+      parentIndexes: 220000002c000000
+      hasSubField: 0
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 4
+      name: inTurn
+      type: Boolean
+      parentIndexes: 220000002c000000
+      hasSubField: 0
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 5
+      name: confirmTurn
+      type: Boolean
+      parentIndexes: 220000002c000000
+      hasSubField: 0
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: onHand
+      type: DeckCardModel
+      parentIndexes: 220000002c000000
+      hasSubField: 1
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 220000002c00000031000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 220000002c00000031000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 220000002c00000031000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 3
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 220000002c00000031000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 4
+      name: faction
+      type: Faction
+      parentIndexes: 220000002c00000031000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 5
+      name: type
+      type: CardType
+      parentIndexes: 220000002c00000031000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 6
+      name: tokenUri
+      type: String
+      parentIndexes: 220000002c00000031000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 7
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 220000002c00000031000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 220000002c0000003100000039000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 220000002c0000003100000039000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 220000002c00000031000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 9
+      name: position
+      type: Int
+      parentIndexes: 220000002c00000031000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 2
+      name: onBoard
+      type: BoardCardModel
+      parentIndexes: 220000002c000000
+      hasSubField: 1
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 3
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 4
+      name: faction
+      type: Faction
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 5
+      name: type
+      type: CardType
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 6
+      name: tokenUri
+      type: String
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 7
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 220000002c0000003e00000046000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 220000002c0000003e00000046000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 10
+      name: equipment
+      type: CardTokenModel
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 220000002c0000003e00000049000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 220000002c0000003e00000049000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 220000002c0000003e00000049000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 220000002c0000003e00000049000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: faction
+      type: Faction
+      parentIndexes: 220000002c0000003e00000049000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: type
+      type: CardType
+      parentIndexes: 220000002c0000003e00000049000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: tokenUri
+      type: String
+      parentIndexes: 220000002c0000003e00000049000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 7
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 220000002c0000003e00000049000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 220000002c0000003e0000004900000051000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 220000002c0000003e0000004900000051000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 220000002c0000003e00000049000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 9
+      name: position
+      type: Int
+      parentIndexes: 220000002c0000003e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    isComplete: 1
+  - name: MatchEnded
+    type: 2
+    query: "subscription MatchEnded{\n    matchEnded{\n        id\n        winner{\n           
+      id\n            username\n            email\n            isVerified\n           
+      wallet{\n                address\n                balance\n            }\n       
+      }\n        playerStatuses{\n            crystal\n            playerId\n           
+      inTurn\n            confirmTurn\n            onHand{\n                cost\n               
+      level\n                name\n                rareLevel\n                faction\n               
+      type\n                tokenUri\n                skills{\n                   
+      type\n                    value\n        }\n                tokenId\n               
+      position\n        }\n            onBoard{\n                cost\n               
+      level\n                name\n                rareLevel\n                faction\n               
+      type\n                tokenUri\n                skills{\n                   
+      type\n                    value\n        }\n                equipment{\n                   
+      cost\n                    tokenId\n                    level\n                   
+      name\n                    rareLevel\n                    faction\n                   
+      type\n                    tokenUri\n                    skills{\n                       
+      type\n                        value\n            }\n        }\n               
+      tokenId\n                position\n            }\n        }\n    }\n}"
+    queryString: matchEnded
+    returnType: MatchModel
+    queryOptions:
+    - online
+    - onAllReady
+    - onReadyTimeout
+    - onWaitForReady
+    - matchStarted
+    - prepareTurnEvent
+    - endTurnEvent
+    - matchEnded
+    - confirmTurnEvent
+    - rewardReceived
+    - notificationPushed
+    fields:
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: winner
+        type: UserModel
+      - name: playerStatuses
+        type: PlayerStatusModel
+      hasChanged: 0
+    - index: 1
+      name: winner
+      type: UserModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: winner
+        type: UserModel
+      - name: playerStatuses
+        type: PlayerStatusModel
+      hasChanged: 0
+    - index: 0
+      name: id
+      type: ID
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      - name: wallet
+        type: UserWalletModel
+      hasChanged: 0
+    - index: 1
+      name: username
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      - name: wallet
+        type: UserWalletModel
+      hasChanged: 0
+    - index: 2
+      name: email
+      type: String
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      - name: wallet
+        type: UserWalletModel
+      hasChanged: 0
+    - index: 3
+      name: isVerified
+      type: Boolean
+      parentIndexes: 01000000
+      hasSubField: 0
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      - name: wallet
+        type: UserWalletModel
+      hasChanged: 0
+    - index: 4
+      name: wallet
+      type: UserWalletModel
+      parentIndexes: 01000000
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: username
+        type: String
+      - name: email
+        type: String
+      - name: isVerified
+        type: Boolean
+      - name: wallet
+        type: UserWalletModel
+      hasChanged: 0
+    - index: 0
+      name: address
+      type: String
+      parentIndexes: 0100000006000000
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: balance
+      type: String
+      parentIndexes: 0100000006000000
+      hasSubField: 0
+      possibleFields:
+      - name: address
+        type: String
+      - name: balance
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: playerStatuses
+      type: PlayerStatusModel
+      parentIndexes: 
+      hasSubField: 1
+      possibleFields:
+      - name: id
+        type: ID
+      - name: winner
+        type: UserModel
+      - name: playerStatuses
+        type: PlayerStatusModel
+      hasChanged: 0
+    - index: 0
+      name: crystal
+      type: Int
+      parentIndexes: 09000000
+      hasSubField: 0
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 1
+      name: playerId
+      type: String
+      parentIndexes: 09000000
+      hasSubField: 0
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 4
+      name: inTurn
+      type: Boolean
+      parentIndexes: 09000000
+      hasSubField: 0
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 5
+      name: confirmTurn
+      type: Boolean
+      parentIndexes: 09000000
+      hasSubField: 0
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 3
+      name: onHand
+      type: DeckCardModel
+      parentIndexes: 09000000
+      hasSubField: 1
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 090000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 090000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 090000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 3
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 090000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 4
+      name: faction
+      type: Faction
+      parentIndexes: 090000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 5
+      name: type
+      type: CardType
+      parentIndexes: 090000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 6
+      name: tokenUri
+      type: String
+      parentIndexes: 090000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 7
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 090000000e000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 090000000e00000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 090000000e00000016000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 090000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 9
+      name: position
+      type: Int
+      parentIndexes: 090000000e000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      hasChanged: 0
+    - index: 2
+      name: onBoard
+      type: BoardCardModel
+      parentIndexes: 09000000
+      hasSubField: 1
+      possibleFields:
+      - name: crystal
+        type: Int
+      - name: playerId
+        type: String
+      - name: onBoard
+        type: BoardCardModel
+      - name: onHand
+        type: DeckCardModel
+      - name: inTurn
+        type: Boolean
+      - name: confirmTurn
+        type: Boolean
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 090000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 090000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 090000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 3
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 090000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 4
+      name: faction
+      type: Faction
+      parentIndexes: 090000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 5
+      name: type
+      type: CardType
+      parentIndexes: 090000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 6
+      name: tokenUri
+      type: String
+      parentIndexes: 090000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 7
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 090000001b000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 090000001b00000023000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 090000001b00000023000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 10
+      name: equipment
+      type: CardTokenModel
+      parentIndexes: 090000001b000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 0
+      name: cost
+      type: Int
+      parentIndexes: 090000001b00000026000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 090000001b00000026000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: level
+      type: Int
+      parentIndexes: 090000001b00000026000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 2
+      name: name
+      type: String
+      parentIndexes: 090000001b00000026000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 3
+      name: rareLevel
+      type: RareLevel
+      parentIndexes: 090000001b00000026000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 4
+      name: faction
+      type: Faction
+      parentIndexes: 090000001b00000026000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 5
+      name: type
+      type: CardType
+      parentIndexes: 090000001b00000026000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 6
+      name: tokenUri
+      type: String
+      parentIndexes: 090000001b00000026000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 7
+      name: skills
+      type: CardSkillModel
+      parentIndexes: 090000001b00000026000000
+      hasSubField: 1
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      hasChanged: 0
+    - index: 1
+      name: type
+      type: CardSkillType
+      parentIndexes: 090000001b000000260000002f000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 0
+      name: value
+      type: Int
+      parentIndexes: 090000001b000000260000002f000000
+      hasSubField: 0
+      possibleFields:
+      - name: value
+        type: Int
+      - name: type
+        type: CardSkillType
+      hasChanged: 0
+    - index: 8
+      name: tokenId
+      type: String
+      parentIndexes: 090000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    - index: 9
+      name: position
+      type: Int
+      parentIndexes: 090000001b000000
+      hasSubField: 0
+      possibleFields:
+      - name: cost
+        type: Int
+      - name: level
+        type: Int
+      - name: name
+        type: String
+      - name: rareLevel
+        type: RareLevel
+      - name: faction
+        type: Faction
+      - name: type
+        type: CardType
+      - name: tokenUri
+        type: String
+      - name: skills
+        type: CardSkillModel
+      - name: tokenId
+        type: String
+      - name: position
+        type: Int
+      - name: equipment
+        type: CardTokenModel
+      hasChanged: 0
+    isComplete: 1
   loading: 0

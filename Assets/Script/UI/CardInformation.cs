@@ -13,6 +13,7 @@ public class CardInformation : MonoBehaviour
     [HideInInspector] public SkillZombie[] skillZombies;
     [HideInInspector] public LevelZombie[] levelZombies;
     [HideInInspector] public TypeCard type;
+    [HideInInspector] public string tokenid;
 
     public void SetData(ZombieModel _data)
     {
@@ -23,5 +24,6 @@ public class CardInformation : MonoBehaviour
         rarity = _data.rareLevel;
         skillZombies = _data.skills;
         type = _data.type;
+        tokenid = _data.tokenId;
     }
 }
